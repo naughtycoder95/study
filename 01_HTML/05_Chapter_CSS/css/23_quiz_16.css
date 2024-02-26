@@ -1,0 +1,18 @@
+/* 22_quiz_16.css */
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Moirai+One&display=swap');
+
+/* TODO: Moirai One, Diphylleia */
+h1 {
+    /* 구글 웹폰트 */
+    font-family: "Moirai One";
+    /* 글자 중앙 정렬 */
+    text-align: center;
+}
+
+p {
+    /* 구글 웹폰트 */
+    font-family: "Diphylleia";
+    /* 글자 중앙 정렬 */
+    text-align: center;
+}

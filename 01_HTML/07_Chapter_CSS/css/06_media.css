@@ -1,0 +1,20 @@
+/* 06_media.css */
+/* TODO: 반응형 - 디바이스(해상도)에 관계없이 적절하게 디자인이 나타나게 하는것 */
+/* TODO: 모니터 최대 크기가 699px 이하이면 빨간색 적용 : 테블릿 */
+@media (max-width: 699px) {
+    body {
+        background-color: red;
+    }
+}
+/* TODO: 모니터 최소 크기가 900px 이상이면 파란색 : pc */
+@media (min-width: 900px) {
+    body {
+        background-color: blue;
+    }
+}
+/* TODO: 모니터 최소 크기가 700px 이고 899px 이하이면 녹색 */
+@media (min-width: 700px) and (max-width: 899px) {
+    body {
+        background-color: green;
+    }
+}

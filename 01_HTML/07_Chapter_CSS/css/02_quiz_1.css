@@ -1,0 +1,116 @@
+/* 02_quiz_1.css */
+/* 여백 초기화 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    /* 목록 점 없애기 */
+    list-style-type: none;
+}
+
+/* 전체 페이지 */
+#page {
+    /* 가로 */
+    width: 995px;
+    /* 중앙 정렬 */
+    margin: 0 auto;
+    /* 임시 배경색 */
+    /* background-color: beige; */
+}
+
+/* 머리말 */
+header {
+    width: 995px;
+    height: 100px;
+    /* 외곽선 - 아래 */
+    border-bottom: 1px solid #cccccc;
+    /* 임시 배경색 */
+    /* background-color: aqua; */
+}
+
+/* 로고 */
+#logo {
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 임시 배경색 */
+    /* background-color: aquamarine; */
+}
+/* 소제목 */
+#top {
+    /* 오른쪽 정렬 */
+    float: right;
+    /* 마진 - 위 */
+    margin-top: 30px;
+    /* 임시 배경색 */
+    /* background-color: blueviolet; */
+}
+
+/* float 인식 속성 : div 더미들(.clear) */
+.clear {
+    /* float 인식 속성 */
+    clear: both;
+}
+
+/* 대메뉴 */
+nav {
+    /* 가로 */
+    width: 995px;
+    height: 70px;
+    /* 마진 - 위 */
+    margin-top: 10px;
+}
+
+nav li {
+    /* 가로배치 */
+    display: inline-block;
+    width: 150px;
+}
+
+/* 본문 : 좌측 */
+section {
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 가로  */
+    width: 600px;
+    /* 임시 배경색 */
+    /* background-color: aqua; */
+}
+/* 사이드바 : 우측 */
+aside {
+    /* 우측 정렬 */
+    float: right;
+    /* 가로 */
+    width: 370px;
+    /* 임시 배경색 */
+    /* background-color: blueviolet; */
+}
+/* 꼬리말 */
+footer {
+    width: 995px;
+    height: 100px;
+    /* 외곽선 */
+    border: 1px solid #cccccc;
+    /* 임시 배경색 */
+    /* background-color: blue; */
+}
+/* 꼬리말 - 주소 */
+#address {
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 마진 - 위 */
+    margin-top: 30px;
+    /* 마진 - 왼쪽 */
+    margin-left: 50px;
+}
+/* 꼬리말 - 고객센타 */
+#customer {
+    /* 오른쪽 정렬 */
+    float: right;
+    /* 마진 - 위 */
+    margin-top: 20px;
+    /* 마진 - 오른쪽 */
+    margin-right: 80px;
+}
+

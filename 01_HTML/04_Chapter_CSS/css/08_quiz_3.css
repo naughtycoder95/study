@@ -1,0 +1,21 @@
+/* 08_quiz_3.css */
+h3 {
+    /* 글자색 속성 */
+    color: black;
+}
+
+p {
+    /* 글자색 속성 */
+    color: green;
+    /* TODO: 글자 크기 속성 : px(기본 단위) */
+    font-size: 18px;
+}
+
+span {
+    /* 글자색 속성 */
+    color: blue;
+    /* TODO: 밑줄 속성 */
+    text-decoration: underline;
+    /* TODO: 굵은 글씨 속성 */
+    font-weight: bold;
+}

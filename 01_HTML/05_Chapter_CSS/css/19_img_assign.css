@@ -1,0 +1,18 @@
+/* 19_img_assign.css */
+/* 부모태그 : div */
+div {
+    /* 가로크기 */
+    width: 640px;
+    /* 외곽선 */
+    border: 2px solid red;
+}
+
+img {
+    /* 가로크기 : %, px, vw, vh */
+    /* width: 120%; */
+    /* TODO: % : 부모 요소를 기준으로 크기를 물려받음 */
+    /* TODO: max-width : 부모 크기를 벗어나지 않게 조정하는 크기 속성 */
+    max-width: 120%;
+    /* 세로크기 : auto(현재 컨텐츠에 맞추어 자동으로 조정됨) */
+    height: auto;
+}

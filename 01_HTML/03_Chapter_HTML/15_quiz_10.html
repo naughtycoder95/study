@@ -1,0 +1,44 @@
+<!-- 15_quiz_10.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 테이블 태그 : table - tr(행) - th,td(열) -->
+    <table border="1">
+        <!-- 1행 5열(병합) -->
+        <tr>
+            <th colspan="2">날짜</th>
+            <th>날씨</th>
+            <th>풍향</th>
+            <th>풍속(m/s)</th>
+        </tr>
+        <!-- 2행 5열 -->
+        <tr>
+            <td>24일(월)</td>
+            <td>오후</td>
+            <td><img src="./img/rain.png" alt="비"></td>
+            <td>남~남서</td>
+            <td>3~7</td>
+        </tr>
+        <!-- 3행(병합) 5열 -->
+        <tr>
+            <td rowspan="2">25일(화)</td>
+            <td>오전</td>
+            <td><img src="./img/rain.png" alt="비"></td>
+            <td>서~북서</td>
+            <td>3~6</td>
+        </tr>
+        <!-- 4행(병합) 5열 -->
+        <tr>
+            <td>오후</td>
+            <td><img src="./img/shine.png" alt="맑음"></td>
+            <td>북서~서</td>
+            <td>3~6</td>
+        </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+/* 11_quiz_5.css */
+#container {
+    width: 600px;
+    /* 중앙 정렬 */
+    margin: 0 auto;
+}
+
+ul {
+    /* 점 없애기 */
+    list-style-type: none;
+}
+
+/* 라벨 디자인 */
+.field {
+    /* 가로 */
+    width: 60px;
+    /* 글자 크기 */
+    font-size: 0.9em;
+    /* 굵은 글씨 */
+    font-weight: bold;
+    /* 글자 오른쪽 정렬 */
+    text-align: right;
+    /* 마진 - 오른쪽 */
+    margin-right: 15px;
+    /* 가로 배치 : 정돈 */
+    display: inline-block;
+}
+
+/* 입력양식 */
+/* 클래스선택자 : .class명 { 속성:값; } */
+.input-box {
+    width: 350px;
+    height: 35px;
+    /* 패딩 */
+    padding: 5px;
+    /* 마진(축약식) : margin : 상/하 좌/우 */
+    margin: 10px 0;
+    /* 가로 배치 : 정돈 */
+    display: inline-block;
+}
+
+/* 버튼 디자인 */
+/* 자식선택자(li) */
+#buttons > li {
+    /* 세로 -> 가로 배치 */
+    display: inline-block;
+}
+/* 버튼 : 제출버튼, 리셋버튼 */
+button {
+    width: 250px;
+    height: 50px;
+    /* 외곽선 */
+    border: 1px solid white;
+    /* 글자크기 : em(rem) */
+    font-size: 0.9em;
+    /* 마진 - 오른쪽 */
+    margin-right: 10px;
+}

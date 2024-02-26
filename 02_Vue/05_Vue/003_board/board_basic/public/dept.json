@@ -1,0 +1,24 @@
+{
+  "dept": [
+    {
+      "dno": 10,
+      "dname": "SALES",
+      "loc": "부산"
+    },
+    {
+      "dno": 20,
+      "dname": "ACCOUNTING",
+      "loc": "서울"
+    },
+    {
+      "dno": 30,
+      "dname": "DEVELOPMENT",
+      "loc": "대구"
+    },
+    {
+      "dno": 40,
+      "dname": "MARKETING",
+      "loc": "대전"
+    }
+  ]
+}

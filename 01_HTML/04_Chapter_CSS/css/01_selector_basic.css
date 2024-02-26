@@ -1,0 +1,12 @@
+/* 01_selecotr_basic.css */
+/* css 주석 : ctrl + / */
+/* TODO: 사용법 :  */
+/* TODO: css 기본 선택자 : html태그, class선택자, id선택자, all선택자  */
+/* TODO: 태그 선택자 { 속성:값; }  */
+
+h1 {
+    /* 글자색 */
+    color: burlywood;
+    /* 배경색 */
+    background-color: blue;
+}

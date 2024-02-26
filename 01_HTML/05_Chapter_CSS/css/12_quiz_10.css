@@ -1,0 +1,21 @@
+/* 태그선택자 : html태그 { 속성:값; } */
+body {
+    /* 배경색 */
+    background-color: yellow;
+}
+
+/* id선택자 : #id속성명 { 속성:값; } */
+#button {
+    /* 배경색 */
+    background-color: blue;
+    /* 글자색 */
+    color: white;
+    /* 글자 중앙 정렬 */
+    text-align: center;
+    /* 가로 크기 */
+    width: 120px;
+    /* 세로 크기 */
+    height: 25px;
+    /* 안쪽 여백(패딩) */
+    padding: 8px;
+}

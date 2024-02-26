@@ -1,0 +1,16 @@
+/* 21_google_font.css */
+/* TODO: 웹폰트 : 어떤 기기로 접속해도 같은 글꼴을 보여줄때 사용함 */
+/* TODO: import : css 파일에서 글꼴 등을 가져오기 사용법 */
+/* 사용법 :  css 글꼴, css 파일등 가져오기 방법
+    @import url(css파일경로(인터넷주소))
+*/
+
+/* 구글 웹폰트 import : Nanum Pen Script 웹폰트  */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+h1 {
+    /* 구글웹폰트 적용 */
+    font-family: 'Nanum Pen Script', cursive;
+    /* 글자 크기 */
+    font-size: 60px;
+}

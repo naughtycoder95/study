@@ -1,0 +1,8 @@
+/* 05_default_class.css */
+/* TODO: class 선택자 : 이름을 부여하는 속성 */
+/* TODO: id선택자 vs class 선택자 차이 */
+/* id 선택자    : 유일한 이름(중복불가) */
+/* class 선택자 : 중복된 이름 허용 */
+.select {
+    color: red;
+}

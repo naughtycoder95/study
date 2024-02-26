@@ -1,0 +1,162 @@
+/* 03_quiz_2.css */
+/* 여백 초기화 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 목록 점 없애기 */
+li {
+    list-style-type: none;
+}
+
+/* 폰트 , 글자크기, 색깔 */
+body {
+    /* 폰트 */
+    font-family: Arial, Helvetica, sans-serif;
+    /* 글자 크기 */
+    font-size: 14px;
+    /* 글자색 */
+    color: #444444;
+}
+
+/* 머리말 */
+header {
+    width: 1140px;
+    height: 100px;
+    /* 중앙 정렬 */
+    margin: 0 auto;
+    /* 임시 배경색 */
+    /* background-color: aqua; */
+}
+
+/* 머리말 - 로고(왼쪽) */
+#logo {
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 마진(축약형) : margin: 상 우 하 좌(시계방향) */
+    margin: 20px 0 0 20px;
+}
+
+/* 머리말 - 소메뉴(오른쪽) */
+#menus {
+    /* 오른쪽 정렬 */
+    float: right;
+}
+/* 머리말 - 소메뉴(오른쪽) - 소소메뉴(li) */
+#main_menu li {
+    /* 가로 배치 */
+    display: inline-block;
+    /* 마진 - 왼쪽 */
+    margin-left: 80px;
+}
+
+/* 머리말 - 소메뉴(오른쪽) - 소소메뉴#1 */
+#top_menu {
+    /* 글자 오른쪽 정렬 */
+    text-align: right;
+    /* 마진 - 위 */
+    margin-top: 20px;
+}
+
+/* 머리말 - 소메뉴(오른쪽) - 소소메뉴#2 */
+#main_menu {
+    /* 마진 - 위 */
+    margin-top: 20px;
+    /* 글자 크기 */
+    font-size: 20px;
+    /* 글자색 */
+    color: black;
+}
+
+/* 대메뉴 : 큰 로고 이미지 : css b-i */
+#main_img {
+    height: 281px;
+    /* 배경이미지 넣기 */
+    background-image: url("../img/main_img.png");
+    /* 배경이미지 반복 중지 */
+    background-repeat: no-repeat;
+    /* 배경이미지 크기 : cover(강제로 늘림) */
+    background-size: cover;
+    /* 배경이미지 위치 : center(중앙 위치함) */
+    background-position: center;
+    /* 마진 - 위 */
+    margin-top: 20px;
+}
+/* 본문 */
+#contents {
+    width: 1140px;
+    /* 중앙 정렬 */
+    margin: 0 auto;
+}
+
+/* 본문 - 사이드바(왼쪽) */
+#sub_menu {
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 가로 */
+    width: 234px;
+    /* 마진 - 위 */
+    margin-top: 25px;
+}
+
+/* 본문 - 사이드바(왼쪽) - li(점선)  */
+#sub_menu li {
+    /* 외곽선 - 점선 */
+    border-bottom: 1px dotted #cccccc;
+    /* 패딩  */
+    padding: 10px;
+}
+
+/* 본문 - 소본문(오른쪽) */
+#main_contents {
+    /* 오른쪽 정렬 */
+    float: right;
+    /* 가로 */
+    width: 880px;
+    /* 마진 - 위 */
+    margin-top: 25px;
+}
+
+/* 더미 div : float 인식 속성 */
+.clear {
+    clear: both;
+}
+
+/* 꼬리말 (div) */
+#footer_box {
+    width: 1140px;
+    /* 중앙정렬 */
+    margin: 0 auto;
+}
+/* 꼬리말 */
+footer {
+    /* 세로 */
+    height: 150px;
+    /* 배경색 */
+    background-color: #2c2a29;
+    /* 마진 - 위 */
+    margin-top: 30px;
+}
+
+/* 꼬리말 - 로고(왼쪽) */
+#footer_logo {
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 마진 - 위 */
+    margin-top: 50px;
+    /* 마진 - 왼쪽 */
+    margin-left: 30px;
+}
+
+/* 꼬리말 - 주소(오른쪽) */
+#address {
+    /* 오른쪽 정렬 */
+    float: right;
+    /* 마진 - 위 */
+    margin-top: 50px;
+    /* 마진 - 오른쪽 */
+    margin-right: 30px;
+}
+
+

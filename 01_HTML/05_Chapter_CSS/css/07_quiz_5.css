@@ -1,0 +1,9 @@
+/* 07_quiz_5.css */
+h3 {
+    /* 외곽선 */
+    border: 5px solid blue;
+    /* 안쪽여백(패딩) */
+    padding: 20px;
+    /* 바깥여백(마진) */
+    margin: 30px;
+}

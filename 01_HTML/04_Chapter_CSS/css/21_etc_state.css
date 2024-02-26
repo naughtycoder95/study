@@ -1,0 +1,23 @@
+/* 21_etc_state.css */
+/* 코딩 용어 : 
+    # : 샵 , &: 엔퍼센트, ;: 세미콜론, : 콜론
+*/
+/* TODO: 상태 선택자 : 입력/불가 상태일때 디자인 적용 */
+/* 사용법 : 입력 가능 상태일때 디자인 적용
+    input:enabled { 속성: 값; }
+*/
+input:enabled {
+    background-color: white;
+}
+/* 사용법 : 입력 불가 상태일때 디자인 적용
+    input:disabled { 속성: 값; }
+*/
+input:disabled {
+    background-color: gray;
+}
+/* 사용법 : 입력양식에 커서가 있을때(포커스) 디자인 적용
+    input:focus { 속성: 값; }
+*/
+input:focus {
+    background-color: orange;
+}

@@ -1,0 +1,35 @@
+<!-- 02_jq_form_selected.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>val() 함수</h1>
+    <form>
+      <p>
+        <label for="user-name">이름</label>
+        <input type="text" id="user-name" value="용대리" />
+      </p>
+    </form>
+
+    <!-- TODO: jquery cdn -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <!-- js -->
+    <script>
+        $(function(){
+            // jquery 코딩
+            // 예제 1) input 양식에 value 값 가져와서 alert 출력하기
+            // 사용법 : $("css선택자").val() : 선택자의 value 속성값 가져오기
+            // let result = $("#user-name").val(); // 용대리
+            // alert(result);
+
+            // 예제 2) input 양식에 value 값 수정하기
+            $("#user-name").val("javascript");
+        });
+    </script>
+  </body>
+</html>

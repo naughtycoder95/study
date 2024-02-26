@@ -1,0 +1,94 @@
+/* 04_quiz_structure_header.css : 헤더 디자인 */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
+
+/* 여백 초기화 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 점 없애기 */
+ul {
+    list-style-type: none;
+}
+
+/* a 링크(앙크) : 파란색 + 밑줄(기본) => 없애기 */
+a {
+    text-decoration: none;
+}
+/* 전체 페이지 디자인 */
+#container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 헤더 연습문제 */
+/* 힌트: 구글웹폰트 : Merienda */
+/* 머리말 */
+header {
+    /* 가로 */
+    width: 100%;
+    /* 세로 */
+    height: 100px;
+    /* 배경색 */
+    background-color: #045;
+}
+/* 머리말 - 로고(왼쪽) */
+#logo {
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 가로 */
+    width: 250px;
+    /* 세로 */
+    height: 100px;
+    /* 패딩 - 왼쪽 */
+    padding-left: 20px;
+    /* 행간 :  */
+    /* TODO: 행간 == div 세로크기 : 세로 중앙정렬 */
+    line-height: 100px;
+}
+
+#logo h1 {
+    /* 글자크기 */
+    font-size: 40px;
+    /* 웹폰트 */
+    font-family: 'Merienda';
+    /* 글자색 */
+    color: white;
+    /* 굵은 글씨 */
+    font-weight:600;
+}
+
+/* 머리말 - nav(오른쪽) */
+nav {
+    /* 오른쪽 정렬 */
+    float: right;
+    /* 가로 */
+    width: 900px;
+    /* 세로 */
+    height: 100px;
+    /* 패딩 - 위 */
+    padding-top: 40px;
+}
+
+/* ul > li : 가로배치 */
+#topMenu > li {
+    /* 가로배치 */
+    display: inline-block;
+}
+
+/* ul > li > a 태그 */
+#topMenu > li > a {
+    /* 글자 크기 : em(rem) */
+    font-size: 1.1em;
+    /* 글자색 */
+    color: white;
+    /* 굵은 글씨 */
+    font-weight: 600;
+    /* 패딩(축약식) : padding: 상/하 좌/우 */
+    padding: 20px 60px;
+}
+/* 참고 : a태그에 마우스가 위로 올라가면 */
+#topMenu > li > a:hover {
+    color: skyblue;
+}

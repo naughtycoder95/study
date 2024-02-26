@@ -1,0 +1,35 @@
+<!-- 05_class_basic.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TODO: class 예약어 소개 : 이크마 js(ES5, ES6) -->
+    <!-- TODO: class(벡엔드 언어:자바) : 객체를 표현하는 방법 -->
+    <script>
+        // 사용법 : class 클래스명 { 생성자(){} 함수명(){} 함수명2(){} } 
+        // 사각형 객체(클래스명) 정의
+        class Squre {
+            // 함수(== 메소드)
+            // 원 둘레 구하기
+            getPerimeter(width) {
+                return 2 * width * 3.14;
+            }
+
+            // 원 넓이 구하기
+            getArea(width) {
+                return width * width * 3.14;
+            }
+        }
+        // 객체의 사용 : 객체를 생성해서 사용함
+        // let 변수명 = new 생성자함수();
+        let squre = new Squre();
+        // 사용법 : 객체변수명.속성명, 객체변수명.함수명();
+        console.log("둘레 :", squre.getPerimeter(4));
+        console.log("넓이 :", squre.getArea(4));
+    </script>
+</body>
+</html>

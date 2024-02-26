@@ -1,0 +1,19 @@
+/* 02_box_detail.css */
+div {
+    /* 가로크기 */
+    width: 100px;
+    /* 세로크기 */
+    height: 100px;
+    /* 외곽선 : border: 선두께 선스타일 선색깔 */
+    border: 5px solid orange;
+    /* 안쪽여백(패딩) : 값;(상우하좌) */
+    /* 축약형 사용법 : padding: 상 우 하 좌; (시계방향) */
+    padding: 30px 0 30px 0;
+    /* padding-top: 30px;
+    padding-right: 0;
+    padding-bottom: 30px;
+    padding-left: 0; */
+    /* 바깥여백(마진) */
+    /* 축약형 사용법 : margin: 상 우 하 좌; (시계방향) */
+    margin: 10px 0 10px 0;
+}

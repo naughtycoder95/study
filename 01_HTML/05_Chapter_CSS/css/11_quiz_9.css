@@ -1,0 +1,36 @@
+/* 11_quiz_9.css */
+h3 {
+    /* 외곽선 - 왼쪽 : 선두께 선스타일 선색깔 */
+    border-left: 5px solid blue;
+    /* 바깥여백(마진) */
+    margin: 20px;
+    /* 안쪽여백(패딩) */
+    padding-left: 10px;
+}
+
+p {
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 30px;
+    /* 바깥여백 - 아래쪽 */
+    margin-bottom: 10px;
+}
+
+ul {
+    /* 외곽선 - 위쪽  : 선두께 선스타일 선색깔 */
+    border-top: 1px solid gray;
+    /* 외곽선 - 아래쪽 : 선두께 선스타일 선색깔  */
+    border-bottom: 1px solid gray;
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 45px;
+    /* 안쪽여백 - 위쪽 */
+    padding-top: 5px;
+    /* 안쪽여백 - 아래쪽 */
+    padding-bottom: 8px;
+}
+
+li {
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 20px;
+    /* 안쪽여백 - 위쪽 */
+    padding-top: 10px;
+}

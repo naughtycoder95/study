@@ -1,0 +1,31 @@
+/* 05_flex.css */
+/* TODO: float : 정렬하고 싶은 대상 태그에 주기 */
+/* TODO: flex  : 정렬하고 싶은 대상 부모 태그에 주기  */
+/* 부모 div */
+.container {
+    /* 가로 */
+    width: 1580px;
+    height: 750px;
+    background-color: beige;
+    /* TODO: flex 모드 */
+    display: flex;
+    /* TODO: 가로 중앙정렬 */
+    justify-content: center;
+    /* TODO: 가로 오른쪽정렬 (end == right) */
+    /* justify-content: end; */
+    /* TODO: 가로 왼쪽정렬 (start == left) */
+    /* justify-content: start; */
+    /* TODO: 세로 중앙정렬 */
+    align-items: center;
+    /* TODO: 세로 아래쪽정렬(end == bottom) */
+    /* align-items: end; */
+    /* TODO: 세로 위쪽정렬(start == top) */
+    /* align-items: start; */
+}
+/* 자식 div 3개 */
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 10px;
+}

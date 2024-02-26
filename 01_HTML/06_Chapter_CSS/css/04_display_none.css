@@ -1,0 +1,8 @@
+/* 04_display_none.css */
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    /* TODO: display - none : 대상이 사라짐 */
+    display: none;
+}

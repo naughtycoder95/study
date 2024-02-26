@@ -1,0 +1,45 @@
+/* 18_quiz_15.css */
+table {
+    /* 테이블 선사이 간격 붙이기 속성 */
+    border-collapse: collapse;
+    /* 가로 크기 */
+    width: 610px;
+}
+
+table, td, th {
+    /* 외곽선 */
+    border: 1px solid #cccccc;
+}
+
+/* 행 */
+tr {
+    /* 글자 중앙 정렬 */
+    text-align: center;
+}
+
+/* 열 */
+td, th {
+    /* 안쪽 여백(패딩) */
+    padding: 5px;
+}
+
+/* 테이블 제목 */
+#table_title {
+    /* 배경색 */
+    background-color: #eeeeee;
+    /* 세로 크기 */
+    height: 30px;
+}
+
+/* 1열  */
+/* 클래스선택자 : .클래스명 { 속성:값; } */
+.train {
+    /* 배경색 */
+    background-color: #fbdbf2;
+    /* 글자색 */
+    color: #f1477b;
+    /* 밑줄 */
+    text-decoration: underline;
+    /* 굵은 글씨 */
+    font-weight: bold;
+}

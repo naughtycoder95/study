@@ -1,0 +1,25 @@
+/* 10_quiz_8.css */
+body {
+    /* 외곽선 : 선두께 선스타일 선색깔 */
+    border: 1px solid red;
+}
+
+h3 {
+        /* 외곽선 : 선두께 선스타일 선색깔 */
+        border: 1px solid blue;
+}
+
+p {
+        /* 외곽선 : 선두께 선스타일 선색깔 */
+        border: 1px solid green;    
+}
+
+ul {
+        /* 외곽선 : 선두께 선스타일 선색깔 */
+        border: 1px solid red;       
+}
+
+li {
+        /* 외곽선 : 선두께 선스타일 선색깔 */
+        border: 1px solid blue;       
+}

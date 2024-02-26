@@ -1,0 +1,35 @@
+<!-- 04_jq_quiz_1.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 연습문제 : 버튼을 클릭하면 입력내용을 화면에 alert으로 
+        출력하세요 , 단, jquery 코딩하세요
+     -->
+    <!-- 힌트 : let 변수 = $(css선택자).val() // 값 가져오기 -->
+    <!--        $(css선택자).click(function(){실행문}) -->
+    <p>이름: <input type="text" id="name" value="홍길동" /></p>
+    <button id="btn">입력 내용 가져오기</button>
+
+    <!-- jquery cdn -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    
+    <script>
+        // 코드를 완성하세요
+        // 1) 버튼을 클릭하면
+        $(function(){
+            // jquery 코딩
+            $("#btn").click(function(){
+                // 버튼클릭 실행되는 부분
+                // 2) 입력내용을 화면에 alert : .val() (value 값)
+                let result = $("#name").val(); // 홍길동
+                alert(result);
+            });
+        });
+    </script>
+  </body>
+</html>

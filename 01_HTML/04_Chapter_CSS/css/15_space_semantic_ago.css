@@ -1,0 +1,28 @@
+/* 15_space_semantic_ago.css */
+/* 복습 : id선택자 -> #속성명 { 속성:값; } */
+/* 머리말 디자인 */
+#header {
+    /* 배경색 */
+    background-color: aqua;
+}
+
+/* 메뉴 디자인 */
+#nav {
+    background-color: cadetblue;
+}
+
+/* 본문 디자인 */
+#section {
+    background-color: beige;
+}   
+
+/* 소본문 디자인 */
+/* 복습 : class선택자 -> .속성명 { 속성:값; } */
+.article {
+    background-color: lightgreen;
+}
+
+/* 꼬리말 디자인 */
+#footer {
+    background-color: lightpink;
+}

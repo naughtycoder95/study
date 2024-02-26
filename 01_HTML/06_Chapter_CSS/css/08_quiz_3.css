@@ -1,0 +1,39 @@
+/* 08_quiz_3.css */
+/* 여백 초기화 */
+/* 초기화 : 속성의 값을 특정값으로 지정하는것 : 0, "" */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    /* 앞에 점 없애기 */
+    list-style-type: none;
+}
+
+/* 이미지 */
+#image {
+    /* 외곽선 */
+    border: 1px solid red;
+    /* 왼쪽 정렬 */
+    float: left;
+}
+
+/* 설명 */
+#desc {
+    /* 외곽선 */
+    border: 1px solid red;
+    /* 왼쪽 정렬 */
+    float: left;
+    /* 마진 - 왼쪽 */
+    margin-left: 30px;
+    /* 가로크기 */
+    width: 300px;
+}
+
+#menu {
+    /* 외곽선 */
+    border: 1px solid red;
+    /* 오른쪽 정렬 */
+    float: right;
+}

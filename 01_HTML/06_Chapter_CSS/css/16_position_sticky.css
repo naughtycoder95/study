@@ -1,0 +1,10 @@
+/* TODO: position - sticky (고정) */
+/* 메뉴 */
+.top-bar {
+    height: 50px;
+    background-color: blue;
+    /* TODO: 고정(좌표 생김) */
+    position: sticky;
+    /* 위쪽(y좌표) */
+    top: 0;
+}

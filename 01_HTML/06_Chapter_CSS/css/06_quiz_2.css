@@ -1,0 +1,29 @@
+/* 06_quiz_2.css */
+/* 코딩용어 : v(vertical : 세로), h(horizontal : 가로) */
+/* 세로메뉴 */
+#v_menu {
+    width: 150px;
+}
+/* 세로메뉴 li 선택 */
+#v_menu li {
+    /* 외곽선 - 아래 */
+    border-bottom: 1px dotted black;
+    /* 패딩 */
+    padding: 5px;
+    /* 점없애기 */
+    list-style-type: none;
+}
+
+/* TODO: 2. 가로메뉴 디자인 */
+#h_menu li {
+    /* display 속성 : 가로 배치 변경 */
+    display: inline-block;
+}
+
+.menus {
+    color: green;
+    /* 마진 - 왼쪽 */
+    margin-left: 20px;
+    /* 마진 - 오른쪽 */
+    margin-right: 20px;
+}

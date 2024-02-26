@@ -1,0 +1,6 @@
+/* css 사용법 : 태그를 선택해서 디자인 적용 */
+/* h1 태그 선택 : color(글자색) : 흰색,background(배경색): 검은색 하세요  */
+h1 {
+    color: white;
+    background: black;
+}

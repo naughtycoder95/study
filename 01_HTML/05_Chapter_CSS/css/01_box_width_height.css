@@ -1,0 +1,15 @@
+div {
+    /* 가로 크기 */
+    width: 100px;
+    /* 세로 크기 */
+    height: 100px;
+    /* 배경색 */
+    background-color: red;
+    /* TODO: 외곽선  */
+    /* TODO: 사용법 : border: 선두께 선스타일 선색깔 */
+    border: 5px solid orange;
+    /* TODO: 안쪽여백(패딩) */
+    padding: 30px;
+    /* TODO: 바깥여백(마진) */
+    margin: 10px;
+}

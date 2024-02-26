@@ -1,0 +1,22 @@
+{
+  "customer":[
+  {
+    "cid": 10,
+    "fullName": "홍길동",
+    "email": "hong@naver.com",
+    "phone": "000-0000-0000"
+  },
+  {
+    "cid": 20,
+    "fullName": "장길산",
+    "email": "jang@naver.com",
+    "phone": "000-0000-0000"
+  },
+  {
+    "cid": 10,
+    "fullName": "전우치",
+    "email": "jun@naver.com",
+    "phone": "000-0000-0000"
+  }
+  ]
+}

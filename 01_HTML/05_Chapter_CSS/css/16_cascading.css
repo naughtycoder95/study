@@ -1,0 +1,25 @@
+/* css 디자인 우선순위 :  */
+/* TODO: 1) 부모 태그 vs 자식 태그 : 자식 디자인 적용됨 */
+/* TODO: 2) 기본 선택자 : id선택자(최고) > 클래스선택자 > 태그선택자 > 전체선택자(최저 우선권) */
+/* TODO: 3) 기본 우선순위 무시하고 나의 디자인 최고로 우선순위 같게 하는 키워드 : !important */
+/* TODO:     사용법 : 선택자 { 속성:값 !important; } */
+/* id 선택자 : 부모태그 */
+#id-div {
+    color: aqua;
+}
+/* h1태그 */
+#id-heading {
+    color: coral;
+}
+/* h1태그 */
+.class-heading {
+    color: green !important;
+}
+/* h1태그 */
+h1 {
+    color: brown;
+}
+
+* {
+    color: black;
+}

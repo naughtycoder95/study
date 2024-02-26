@@ -1,0 +1,28 @@
+/* 12_position_relative.css */
+/* TODO: position - 상대좌표 */
+
+/* 절대좌표 박스 */
+.abox {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    /* 절대좌표 모드 */
+    position: absolute;
+    /* 왼쪽(x좌표) */
+    left:0;
+    /* 위쪽(y좌표) */
+    top:0
+}
+
+/* 상대좌표 박스 */
+.rbox {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* TODO: 상대좌표 모드 */
+    position: relative;
+    /* 왼쪽(x좌표) */
+    left: 0;
+    /* 위쪽(y좌표) */
+    top: 0;
+}

@@ -1,0 +1,43 @@
+/* 08_ani_translate.css */
+/* 전체 div : 부모 div */
+#container {
+    width: 800px;
+    height: 200px;
+    /* 중앙 정렬 */
+    margin: 20px auto;
+}
+/* 1st, 2nd, 3rd 박스들 : 자식 div */
+.origin {
+    width: 100px;
+    height: 100px;
+    /* 외곽선 */
+    border: 1px solid black;
+    /* 마진 */
+    margin: 40px;
+    /* 가로 배치 */
+    display: inline-block;
+}
+/* origin > div 태그 */
+.origin > div {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+/* 1st 손자박스 */
+#movex:hover {
+    /* TODO: 사용법 : transform: translateX(x좌표거리) */
+    /* TODO: 우측으로 50px 이동시킴 */
+    transform: translateX(50px);
+}
+/* 2nd 손자박스 */
+#movey:hover {
+    /* TODO: 사용법 : transform: translateY(y좌표거리) */
+    /* TODO: 아래로 50px 이동시킴 */
+    transform: translateY(50px);
+}
+/* 3rd 손자박스 */
+#movexy:hover {
+    /* TODO: 사용법 : transform: translate(x좌표거리,y좌표거리) */
+    /* TODO: 대각선 아래로 50px씩 이동시킴 */
+    transform: translate(50px, 50px);
+}

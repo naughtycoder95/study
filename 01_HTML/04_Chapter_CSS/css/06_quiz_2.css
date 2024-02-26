@@ -1,0 +1,11 @@
+/* 06_quiz_2.css */
+h3 {
+    /* 글자색 속성 */
+    color: blue;
+}
+
+li {
+    /* 목록 앞에 점 없애기 속성 */
+    list-style-type: none;
+    /* list-style-type: square;(사각형) */
+}

@@ -1,0 +1,25 @@
+/* 16_quiz_13.css */
+/* 마진/패딩 초기화 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* 배경이미지 : url(이미지경로(인터넷주소)) */
+    background-image: url("../img/sale_bg.png");
+}
+/* id선택자 : #id속성명 { 속성:값; } */
+#shop {
+    /* 바깥여백 - 위쪽 */
+    margin-top: 50px;
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 30px;
+}
+
+#button {
+    /* 바깥여백 - 위쪽 */
+    margin-top: 30px;
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 190px;
+}

@@ -1,0 +1,50 @@
+/* 17_quiz_14.css */
+body {
+    /* 글자색 */
+    color: #444444;
+}
+
+/* 나의 일정(제목) */
+h3 {
+    /* 외곽선 - 왼쪽 */
+    border-left: 5px solid green;
+    /* 안쪽 여백(패딩) - 왼쪽 */
+    padding-left: 10px;
+}
+
+/* 날짜 */
+div {
+    /* 가로크기 */
+    width: 610px;
+    /* 글자 오른쪽 정렬 */
+    text-align: right;
+}
+
+/* 공통 디자인 */
+table, td {
+    /* 외곽선 */
+    border: 1px solid #aaaaaa;
+}
+
+table {
+    /* 테이블 선사이 간격 붙이기 속성 */
+    border-collapse: collapse;
+    /* 가로 크기 */
+    width: 610px;
+    /* 글자 크기 */
+    font-size: 12px;
+    /* 바깥여백 - 위쪽 */
+    margin-top: 15px;
+}
+
+tr {
+    /* 세로 크기 */
+    height: 60px;
+}
+
+td {
+    /* 가로 크기 */
+    width: 76px;
+    /* 안쪽 여백 */
+    padding: 5px;
+}

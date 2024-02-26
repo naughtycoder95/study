@@ -1,0 +1,22 @@
+/* 02_display_span.css */
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    /* TODO: display -> block */
+    display: block;
+}
+.box2 {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    /* TODO: display -> block */
+    display: block;
+}
+.box3 {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    /* TODO: display -> block */
+    display: block;
+}

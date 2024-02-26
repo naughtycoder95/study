@@ -1,0 +1,9 @@
+/* 05_quiz_3.css */
+h3 {
+    /* 외곽선 */
+    border: 5px solid #e1285a;
+    /* 안쪽여백(패딩) */
+    padding: 10px;
+    /* 가로크기  */
+    width: 400px;
+}

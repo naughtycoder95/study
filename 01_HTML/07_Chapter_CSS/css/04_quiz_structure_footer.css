@@ -1,0 +1,37 @@
+/* 04_quiz_structure_footer.css */
+/* 꼬리말 */
+footer {
+    /* 가로 */
+    width: 1200px;
+    /* 세로 */
+    height: 100px;
+    /* 외곽선 - 위 */
+    border-top: 2px solid #222222;
+    /* 마진 - 위 */
+    margin-top: 50px;
+}
+
+/* 꼬리말 - bottomMenu - ul - li */
+#bottomMenu ul li {
+    /* 가로 배치 */
+    display: inline-block;
+    /* 외곽선 - 오른쪽 */
+    border-right: 1px solid #dddddd;
+    /* 패딩(축약식) : padding: 상하 좌우 */
+    padding: 5px 20px;
+}
+
+/* 꼬리말 - bottomMenu - ul */
+#bottomMenu ul {
+    /* 마진 - 위 */
+    margin-top: 15px;
+    /* 마진 - 왼쪽 */
+    margin-left: 60px;
+}
+
+/* 꼬리말 : a태그(글자) */
+#bottomMenu ul li a {
+    /* 글자 크기 */
+    font-size: 15px;
+    color: #666666
+}

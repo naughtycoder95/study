@@ -1,0 +1,19 @@
+/* 07_div_span.css */
+/* TODO: 특징 : div vs span  */
+/* TODO:       div (크기가 있음), span(크기가 없음, 글자만큼 크기가 정해짐) */
+.div-hello {
+    width: 300px;
+    background-color: aqua;
+}
+.div-hello2 {
+    width: 300px;
+    background-color: blue;
+}
+.span-hello {
+    width: 300px;
+    background-color: blueviolet;
+}
+.span-hello2 {
+    width: 300px;
+    background-color: green;
+}

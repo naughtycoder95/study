@@ -1,0 +1,28 @@
+/* 06_quiz_4.css */
+/* 1st h3  */
+#title1 {
+    /* 외곽선-위 : 선두께 선스타일 선색깔 */
+    border-top: 2px solid black;
+    /* 안쪽여백(패딩) */
+    padding: 5px;
+    /* 가로 크기 */
+    width: 345px;
+}
+
+/* 2nd h3 */
+#title2 {
+    /* 외곽선-왼쪽 : 선두께 선스타일 선색깔 */
+    border-left: 2px solid #e1285a;
+    padding: 5px;
+}
+
+/* 3rd h3 */
+#title3 {
+    /* 외곽선 :  선두께 선스타일 선색깔 */
+    border: 2px solid skyblue;
+    padding: 5px;
+    /* 가로 크기  */
+    width: 345px;
+    /* TODO:  둥근사각형 : border-radius: 크기px; (클수록 원이됨) */
+    border-radius: 3px;
+}

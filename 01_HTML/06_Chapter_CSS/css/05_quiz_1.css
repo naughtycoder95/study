@@ -1,0 +1,18 @@
+/* 05_quiz_1.css */
+ul {
+    background-color: #f5f7e4;
+    width: 640px;
+    /* 패딩 */
+    padding: 30px;
+    /* 둥근 사각형 */
+    border-radius: 10px;
+    /* 외곽선 */
+    border: 1px solid #cccccc;
+}
+
+li {
+    /* display */
+    display: inline-block;
+    /* 마진 - 왼쪽 */
+    margin-left: 20px;
+}

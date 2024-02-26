@@ -1,0 +1,37 @@
+<!-- 05_jq_html.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box">
+      <h3>내용 가져오기</h3>
+      <p>html 태그도 가져옴</p>
+      <button id="btn">html 가져오기</button>
+    </div>
+
+    <!-- jquery cdn -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <!-- js -->
+    <script>
+      // jquery 형태 :  $(function(){});
+      $(function () {
+        // jquery 코딩
+        $("#btn").click(function () {
+          // 예제 1: 버튼 클릭하면 내용가져와서 alert 으로 출력하기
+        //   사용법 : $("css선택자").html() => 태그사이의 문자열 가져오기
+          // let result = $("#box").html();
+          // alert(result);
+
+          // 예제 2: h3 태그의 문자열 수정하기
+          // 사용법 : $("css선택자").html("수정문자") => 태그사이의 문자열 수정하기
+          $("h3").html("내용 수정했음");
+        });
+      });
+    </script>
+  </body>
+</html>

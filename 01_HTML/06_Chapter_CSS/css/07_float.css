@@ -1,0 +1,22 @@
+/* 07_float.css */
+/* TODO: 사용법 : 선택자 { float:left[right]; } */
+/* TODO: float : 우/좌 배치만 가능 , 중앙 없음 */
+/* TODO: 특징 : 다른태그가 float 가 걸린 태그를 인식하지 못함 */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    /* 마진 */
+    margin: 10px;
+    /* div 태그들 좌로 배치 */
+    float: left;
+}
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* 마진 */
+    margin: 10px;
+    /* div 태그들 우로 배치 */
+    float: right;
+}

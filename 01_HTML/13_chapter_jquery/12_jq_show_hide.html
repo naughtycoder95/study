@@ -1,0 +1,38 @@
+<!-- 12_jq_show_hide.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>표시/숨김</h1>
+    <button id="showBtn">표시</button>
+    <button id="hideBtn">숨김</button>
+    <p id="text">숨기거나 나타날거에요!</p>
+
+    <!-- jquery cdn -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <!-- js -->
+    <script>
+      // 형태 : $(function(){});
+      $(function () {
+        // jquery 코딩
+        // 1) #showBtn 버튼 클릭하면
+        $("#showBtn").click(function () {
+          // 2) #text 보이기
+        //   사용법 : $("css선택자").show(); => 선택자 보이기
+          $("#text").show();
+        });
+        // 2) #hideBtn 버튼 클릭하면
+        $("#hideBtn").click(function () {
+          // 2) #text 숨기기
+        //   사용법 : $("css선택자").hide(); => 선택자 숨기기
+          $("#text").hide();
+        });
+      });
+    </script>
+  </body>
+</html>

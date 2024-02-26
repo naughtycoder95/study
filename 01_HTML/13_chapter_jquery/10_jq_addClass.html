@@ -1,0 +1,42 @@
+<!-- 10_jq_addClass.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .hover {
+            background-color: blue;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- TODO: classList(클래스추가/삭제) === addClass(추가)/removeClass(삭제) -->
+    <div class="box"></div>
+
+    <!-- jquery cdn -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <!-- js -->
+    <script>
+        $(function(){
+            // jquery 모두 코딩
+            $(".box").hover(function(){
+                // 마우스 위로 코딩
+                $(".box").addClass("hover");
+            },function(){
+                // 마우스 나갔을때 코딩
+                $(".box").removeClass("hover");
+            });
+        })
+    </script>
+
+</body>
+</html>

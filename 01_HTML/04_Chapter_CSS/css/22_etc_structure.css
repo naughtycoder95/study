@@ -1,0 +1,18 @@
+/* 22_etc_structure.css */
+/* TODO: 구조 선택자 : 수식을 통해서 태그를 선택함 */
+li {
+    /* 목록 앞에 점 없애기 */
+    list-style-type: none;
+}
+
+/* 2n : 짝수(2 * n), 2n+1 : 홀수(2*n + 1) */
+/* 사용법 : 
+    선택자:nth-child(수식) { 속성: 값; }
+*/
+li:nth-child(2n) {
+    background-color: #ff0003;
+}
+
+li:nth-child(2n+1) {
+    background-color: #800000;
+}

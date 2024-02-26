@@ -1,0 +1,27 @@
+/* 09_quiz_4.css */
+h2 {
+    /* 글자색 속성 */
+    color: black;
+    /* 글자 크기 속성 */
+    font-size: 25px;
+}
+
+li {
+    /* 현재경로 : ./ */
+    /* TODO: 상위경로 : ../ */
+    /* TODO: url() css함수 : 이미지를 찾아주는 css 함수  */
+    /* TODO: list-style-image: url("이미지경로"); */
+    list-style-image: url("../img/arrow.gif");
+}
+
+span {
+    /* 굵은 글씨 속성 */
+    font-weight: bold;
+}
+
+p {
+    /* 글자색 속성 */
+    color: green;
+    /* 밑줄 속성 */
+    text-decoration: underline;
+}

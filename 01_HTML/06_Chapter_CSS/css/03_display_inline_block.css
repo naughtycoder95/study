@@ -1,0 +1,28 @@
+/* 03_display_inline_block.css */
+/* TODO: inline-block 예제 */
+/* TODO: inline-block 속성 : 가로/세로속성(O), 자동줄바꿈(X) */
+/* TODO: 활용 예) 세로배치 메뉴 -> 가로배치 메뉴 디자인 변경 */
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin: 20px;
+    /* TODO: display 속성 */
+    display: inline-block;
+}
+.box2 {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    margin: 20px;
+    /* TODO: display 속성 */
+    display: inline-block;
+}
+.box3 {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    margin: 20px;
+    /* TODO: display 속성 */
+    display: inline-block;
+}

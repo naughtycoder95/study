@@ -1,0 +1,27 @@
+/* 09_quiz_7.css */
+h3 {
+    /* 바깥여백 - 위쪽 */
+    margin-top: 20px;
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 20px;
+}
+
+ul {
+    /* 외곽선 */
+    border: 1px solid black;
+    /* 가로크기 */
+    width: 450px;
+    /* 바깥여백(축약형) : 상우하좌(시계방향) */
+    margin: 20px 0 0 20px; 
+    /* TODO: 안쪽여백(축약형) : 상우하좌(시계방향) */
+    padding: 20px 30px 30px 30px;
+}
+
+li {
+    /* 목록 앞에 점 없애기 */
+    list-style-type: none;
+    /* 외곽선(점선) : 선두께 선스타일(점선) 색깔 */
+    border-bottom: 1px dotted gray;
+    /* 안쪽여백(축약형) : 상우하좌(시계방향) */
+    padding: 10px 0 10px 0;
+}

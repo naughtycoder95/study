@@ -1,0 +1,29 @@
+/* 04_quiz_2.css */
+/* id선택자 : #속성명 */
+#title1 {
+  /* 글자색 */
+  color: purple;
+}
+
+#weather {
+  /* 글자색 */
+  color: red;
+  /* 굵은 글씨 */
+  font-weight: bold;
+}
+
+#title2 {
+  color: green;
+}
+
+#location {
+  /* 굵은 글씨 */
+  font-weight: bold;
+}
+
+#notice {
+    /* 굵은 글씨 */
+    font-weight: bold;
+    /* 글자색 */
+    color: blue;
+}

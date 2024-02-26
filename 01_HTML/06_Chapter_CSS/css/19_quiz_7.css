@@ -1,0 +1,19 @@
+/* 19_quiz_7.css */
+#container {
+    /* 가로 중앙 정렬 */
+    margin:  0 auto;
+    /* 가로 */
+    width: 800px;
+}
+
+table, th, td {
+    /* 외곽선 */
+    border: 1px solid #222222;
+    /* 선사이 간격 붙이기 */
+    border-collapse: collapse;
+}
+/* 열 */
+th, td {
+    /* 패딩 */
+    padding: 10px;
+}

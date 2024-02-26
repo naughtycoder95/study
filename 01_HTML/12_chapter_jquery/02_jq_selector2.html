@@ -1,0 +1,29 @@
+<!-- 02_jq_selector2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h2>선택자</h2>
+    <h3>직접선택자</h3>
+    <!-- TODO: jquery 연결(링크) : CDN : 인터넷 주소로 다른 라이브러리 사용방법 -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <!-- js -->
+    <script>
+        // js 코딩
+        // 복습 : $(function(){});
+        $(function(){
+            // jquery 코딩
+            // 예제 : *(전체선택자) 선택해서 외곽선(border) 1px solid blue 하세요
+            // .css() 함수를 사용하세요
+            // 사용법 : $("css선택자").함수("속성", "값");
+            $("*").css("border", "1px solid blue");
+        });
+
+    </script>
+</body>
+</html>

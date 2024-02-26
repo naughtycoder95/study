@@ -1,0 +1,14 @@
+/* 03_quiz_1.css */
+/* 자동정렬 단축키 : ctrl + alt + l */
+/* TODO: 선택자들에게 공통된 속성 적용하기 */
+/* 사용법 : 
+    선택자,선택자2,... { 속성:값; }
+*/
+table,tr,th,td {
+  /* 외곽선 : border: 선두께 선스타일 선색깔 */
+  border: 1px solid black;
+  /* 테이블의 안쪽선붙이기 속성 */
+  border-collapse: collapse;
+  /* 안쪽 여백(패딩) */
+  padding: 8px;
+}

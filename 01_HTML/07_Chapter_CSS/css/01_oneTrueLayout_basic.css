@@ -1,0 +1,57 @@
+/* 01_oneTrueLayout_basic.css */
+/* 여백 초기화 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 가상의 페이지 */
+#container {
+    /* 가로 */
+    width: 1200px;
+    /* 중앙정렬 */
+    margin: 20px auto;
+}
+
+/* 머리말 */
+/* 복습 id선택자 : #속성명 { 속성:값; } */
+#header {
+    /* 세로 */
+    height: 120px;
+    /* 배경색 */
+    background-color: gray;
+}
+
+/* 사이드바(왼쪽 정렬) */
+#sidebar {
+    /* 가로 */
+    width: 300px;
+    /* 세로 */
+    height: 600px;
+    /* 배경색 */
+    background-color: aqua;
+    /* 좌측배치 */
+    float: left;
+}
+
+/* 본문 */
+#contents {
+    /* 가로 */
+    width: 900px;
+    /* 세로 */
+    height: 600px;
+    /* 배경색 */
+    background-color: beige;
+    /* 우측배치 */
+    float: right;
+}
+
+/* 꼬리말 */
+#footer {
+    /* float 인식 속성 */
+    clear: both;
+    /* 배경색 */
+    background-color: burlywood;
+    /* 세로 */
+    height: 100px;
+}

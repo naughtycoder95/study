@@ -1,0 +1,12 @@
+/* 02_default_wildcard.css */
+/* TODO: *(와일드카드)  : 전체선택자 */
+/* 사용법 : 
+    * { 속성: 값; }
+*/
+* {
+    color: red;
+}
+
+h1 {
+    color: aqua;
+}

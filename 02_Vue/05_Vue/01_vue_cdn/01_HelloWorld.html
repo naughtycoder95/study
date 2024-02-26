@@ -1,0 +1,29 @@
+<!-- 01_HelloWorld.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <!-- TODO: vue cdn :(인터넷 주소로 라이브러리를 사용하는 방법) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <!-- js -->
+    <script>
+        // 바인딩 기술 : 변수 와 뷰 객체 데이터를 연결하는 기술 : 예) {{ 변수명 }}
+        // 사용법 : 화면출력 : {{ 변수명 }}
+        // 사용법 : new Vue({data: {변수명}})
+        new Vue({
+            el: "#app",
+            data: {
+                message: "안녕하세요 !!!!!!"
+            }
+        });
+    </script>
+</body>
+</html>

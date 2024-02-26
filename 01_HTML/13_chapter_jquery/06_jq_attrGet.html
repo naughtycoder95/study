@@ -1,0 +1,25 @@
+<!-- 06_jq_attrGet.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- TODO: html태그의 속성의 값 가져오기 -->
+    <!-- jquery cdn -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <!-- js -->
+    <script>
+        // 형태 : 
+        $(function(){
+            // jquery 코딩
+            // 사용법 : $("css선택자").attr("속성명") => 선택자의 속성값을 가져오기
+            let src = $("script").attr("src");
+            alert(src);
+        });
+    </script>
+  </body>
+</html>

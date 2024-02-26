@@ -1,0 +1,61 @@
+<!-- 01_form_basic.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 입력양식 태그 : form, input 태그 -->
+    <!-- form 태그    : 여는태그/닫는태그, 생략가능  -->
+    <!-- input 태그   : 여는태그/ 또는 여는태그  -->
+    <!-- 결과 확인     : 오른쪽 클릭 - open with live server 선택 -->
+    <form>
+        <!-- TODO: 사용법(*) 1) <input type="text" name="속성명" value="화면값" > -->
+        <!-- TODO: 사용법    type="text" : 글자(문자,숫자등)입력 양식을 의미 -->
+        <input type="text" name="name" value="" >
+        <br>
+        <!-- TODO: 사용법  2) <input type="password" name="속성명" value="화면값" > -->
+        <!-- TODO: 사용법    type="password" : *** 안보이는 패스워드 입력 양식을 의미 -->
+        <input type="password" name="password" value="" >
+        <br>
+        <!-- TODO: 사용법  3) <input type="checkbox" name="속성명" value="" > -->
+        <!-- TODO: 사용법    type="checkbox" : 화면에 체크박스 표시 -->
+        <!-- TODO: 사용법    checked         : 미리 체크된 체크박스 표시 -->
+        <input type="checkbox" name="good" value="good" checked >좋음
+        <input type="checkbox" name="bad" value="bad" >나쁨
+
+        <!-- TODO: 사용법  4) <input type="radio" name="속성명" value="값" > -->
+        <!-- TODO: 사용법    type="radio"    : 화면에 라디오박스 표시 -->
+        <!-- TODO: 사용법    checked         : 미리 체크된 라디오박스 표시 -->
+        <!-- TODO: 사용법    name            : 2개의 라디오박스 값을 일치시켜야 연결됨 -->
+        <input type="radio" name="people" value="people" >여
+        <input type="radio" name="people" value="people" >남
+        <br>
+        <!-- TODO: 사용법  5) <input type="file" name="속성명" > -->
+        <!-- TODO: 사용법    type="file"    : 파일 대화상자가 표시 -->
+        <input type="file" name="file" >
+        <br>
+
+        <!-- TODO: 사용법  6) <input type="button" name="속성명" value="버튼명" > -->
+        <!-- TODO: 사용법    type="button"    : 버튼 표시 -->
+        <!-- TODO: 사용법   (참고) <button>버튼명</button> : 버튼 표시 -->
+        <input type="button" name="name" value="장길산" >
+        <button>홍길동</button>
+
+        <!-- TODO: 사용법  7) <input type="submit" name="속성명" value="버튼명" > -->
+        <!-- TODO: 사용법    type="submit"    : 클릭하면 페이지이동이 일어남 -->
+        <!--  -->
+        <!-- <form action="다른페이지주소"> -->
+            <input type="submit" name="name" value="이동" >
+        <!-- </form> -->
+
+        <!-- TODO: 사용법  8) <input type="hidden" name="속성명" value="숨김값" > -->
+        <!-- TODO: 사용법    type="hidden"    : 화면에는 안보이지만 value 값이 있음 -->
+        <input type="hidden" name="name" value="홍길동" >
+        
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* 15_position_fixed.css */
+/* TODO: position - 메뉴 고정 */
+/* TODO: 본문과 메뉴 겹침 현상이 있으므로 본문에 약간의 마진이 필요함 */
+/* 메뉴 */
+.top-bar {
+    height: 50px;
+    background-color: red;
+    /* TODO: 메뉴 고정 (좌표 생김) */
+    position: fixed;
+    /* 왼쪽(x좌표) */
+    left: 0;
+    /* 위쪽(y좌표) */
+    top: 0;
+    /* 오른쪽(-x좌표) */
+    right: 0;
+}
+
+.container {
+    /* 마진 - 위 */
+    margin-top: 50px;
+}

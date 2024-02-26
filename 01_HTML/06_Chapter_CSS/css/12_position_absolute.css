@@ -1,0 +1,42 @@
+/* 12_position_absolute.css */
+/* TODO: position : 절대좌표(absolute) */
+/* TODO: html 기본적으로 좌표가 없음(static) */
+/* TODO: html 좌표 모드가 있고, left/top 이용해서 태그를 이동시킬수 있음 */
+/* 클래스 선택자 : .class명 { 속성:값; } */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    /* TODO: 절대좌표 모드 변경 */
+    position: absolute;
+    /* TODO: 왼쪽좌표(x좌표)  */
+    left: 0;
+    /* TODO: 위쪽좌표(y좌표) */
+    top: 0;
+    /* TODO: 겹칠때 위로 올라오도록 바꾸는 속성(숫자가 클수록 위로 올라감) */
+    z-index: 30;
+}
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* TODO: 절대좌표 모드 변경 */
+    position: absolute;
+    /* TODO: 왼쪽좌표(x좌표)  */
+    left: 40px;
+    /* TODO: 위쪽좌표(y좌표) */
+    top: 40px;
+    z-index: 20;
+}
+.box3 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    /* TODO: 절대좌표 모드 변경 */
+    position: absolute;
+    /* TODO: 왼쪽좌표(x좌표)  */
+    left: 80px;
+    /* TODO: 위쪽좌표(y좌표) */
+    top: 80px;
+    z-index: 10;
+}

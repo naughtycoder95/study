@@ -1,0 +1,19 @@
+/* TODO: 절대좌표 이용 중앙 정렬 */
+body {
+    background-color: pink;
+}
+
+.container {
+    width: 500px;
+    height: 250px;
+    background-color: orange;
+    /* TODO: 절대좌표 */
+    position: absolute;
+    /* 왼쪽(x) */
+    left: 50%;
+    /* 위(y) */
+    top: 50%;
+    /* TODO(보정): 마진(축약형) : margin : 상 우 하 좌(시계방향)  */
+    margin: -125px 0 0 -250px;
+
+}

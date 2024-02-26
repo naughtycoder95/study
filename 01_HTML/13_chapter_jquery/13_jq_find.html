@@ -1,0 +1,32 @@
+<!-- 13_jq_find.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TODO: 부모 태그 밑에 특정 자식태그 찾아서 디자인하기 -->
+    <p class="target">
+        <span class="lo">Lorem</span>
+        <span class="ip">Ipsum</span>
+        <span class="do">Dolor</span>
+    </p>
+
+    <!-- jquery cdn -->
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <script>
+        // 형태 : 
+        $(function(){
+            // jquery 코딩
+            // p태그 === .target
+            $(".target").find(".lp")
+                .css("background-color","skyblue");
+        });
+    </script>
+
+</body>
+</html>
+

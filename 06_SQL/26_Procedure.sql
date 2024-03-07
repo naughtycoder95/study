@@ -102,11 +102,49 @@ CREATE OR REPLACE PROCEDURE pro_exam04
 IS
     -- 선언부
     -- 커서 정의 : 배열과 비슷, select 문의 결과
+    -- 사용법) CURSOR 커서변수명 IS SELECT ~ 문
     CURSOR emp_cursor IS
         SELECT ENAME, SALARY, DNO
         FROM EMPLOYEE
         WHERE DNO = p_num1; -- 부서번호(매개변수)
 BEGIN
-
+    -- FOR문 : 반복문
+    -- 자바의 향상된 FOR 문 과 비슷 : 예) for(자료형 변수 : 배열){}
+    -- 특징 : 증감식 없음, 데이터 끝에 도달하면 반복문 종료
+    FOR emp_record IN emp_cursor LOOP
+        -- 반복문 실행부분 
+        -- emp_record : 커서의 1행만 차례대로 들어감
+        -- 차례로 화면에 출력하기 : 1행의 각 컬럼을 화면에 출력
+        DBMS_OUTPUT.PUT_LINE(emp_record.ename || ' ' || emp_record.salary
+                            || ' ' || emp_record.dno);
+    END LOOP;
 END;
 /
+-- 프로시저 실행 방법
+CALL pro_exam04(20);
+
+-- 예제 5) 평션 만들기 
+-- 예제) 부서번호를(DNO) 매개변수로 받아서 부서위치를(LOC) 출력하는 함수 정의
+-- 사용법) CREATE OR REPLACE FUNCTION 평션명(매개변수 in 자료형)
+--        RETURN 리턴값자료형
+-- 예약어 : 테이블명.컬럼명%type => 테이블명에 해당하는 컬럼의 자료형을 가져옴
+--        예) DEPARTMENT.DNO%TYPE => DEPARTMENT 테이블의 DNO 컬럼의 자료형 : NUMBER
+CREATE OR REPLACE FUNCTION fn_exam05
+(
+    p_num1 in DEPARTMENT.DNO%type -- 매개변수 자료형 (NUMBER)
+)
+RETURN DEPARTMENT.LOC%TYPE
+IS
+    -- 선언부
+    v_loc DEPARTMENT.LOC%TYPE; -- 부서 테이블의 LOC 자료형 참고
+BEGIN
+    --  부서번호를(DNO) 매개변수로 받아 위치를(LOC) 조회하는 SQL문
+    SELECT LOC INTO v_loc
+    FROM DEPARTMENT
+    WHERE DNO = p_num1;        -- 부서번호 매개변수
+
+    RETURN v_loc;
+END;
+/
+-- 함수 실행방법 : 
+SELECT fn_exam05(10) FROM DUAL;

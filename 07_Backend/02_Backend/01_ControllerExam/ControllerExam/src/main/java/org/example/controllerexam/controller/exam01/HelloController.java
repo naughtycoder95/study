@@ -37,7 +37,7 @@ public class HelloController {
     }
 
     //  TODO: 연습 1) url : /exam01/hello2 =>
-//                  함수명 : Hello2
+    //               함수명 : Hello2
     //               jsp : "exam01/example01.jsp"
     //               결과 : "안녕 hello2 페이지 "
     //                     "Springboot2 처음이지"
@@ -52,12 +52,12 @@ public class HelloController {
     }
 
     //  TODO: 연습 2) url : /exam01/hello3
-//               함수명: Hello3
-//               jsp : "exam01/example02.jsp"
-//               결과 :  "안녕 JSP 페이지야 "
-//                      "JSP 에는 JSTL "
-//                      "EL 표현식이 있습니다. "
-//  뷰/html 코딩 : 자동정렬 : ctrl + alt + l (인텔리제이 단축키)
+    //               함수명: Hello3
+    //               jsp : "exam01/example02.jsp"
+    //               결과 :  "안녕 JSP 페이지야 "
+    //                      "JSP 에는 JSTL "
+    //                      "EL 표현식이 있습니다. "
+    //  뷰/html 코딩 : 자동정렬 : ctrl + alt + l (인텔리제이 단축키)
     @GetMapping("/exam01/hello3")
     public String Hello3(Model model) {
         model.addAttribute("greeting", "안녕 JSP 페이지야 ");
@@ -68,9 +68,9 @@ public class HelloController {
     }
 
     //    TODO: 예제 2) JSP 페이지로 모든 자료형을 보내기
-//         url : /exam01/operation
-//         함수 : Operation
-//         jsp : /exam01/operation.jsp
+    //         url : /exam01/operation
+    //         함수 : Operation
+    //         jsp : /exam01/operation.jsp
     @GetMapping("/exam01/operation")
     public String Operation(Model model) {
 
@@ -79,7 +79,7 @@ public class HelloController {
         String strVal = "a";
         boolean bVal = true;
 
-//      줄복사 단축키 : ctrl + d
+    //      줄복사 단축키 : ctrl + d
         model.addAttribute("strNum", strNum);
         model.addAttribute("iNum", iNum);
         model.addAttribute("strVal", strVal);
@@ -89,16 +89,16 @@ public class HelloController {
     }
 
     //  연습 3)
-//        url         : /exam01/hello4
-//        함수명       : Hello4
-//        jsp 페이지명 :  exam01/example03.jsp
-//        문제         : boolean(bFlag = true), int(iParam = 10),
-//                     long(lParam = 15L), double(dParam = 20.2) 변수 4개를
-//                     만들어서 각각 자료형으로 전달해서 jsp 로 출력하세요
-//        결과 출력    : true
-//                      10
-//                      15
-//                      20.2
+    //        url         : /exam01/hello4
+    //        함수명       : Hello4
+    //        jsp 페이지명 :  exam01/example03.jsp
+    //        문제         : boolean(bFlag = true), int(iParam = 10),
+    //                     long(lParam = 15L), double(dParam = 20.2) 변수 4개를
+    //                     만들어서 각각 자료형으로 전달해서 jsp 로 출력하세요
+    //        결과 출력    : true
+    //                      10
+    //                      15
+    //                      20.2
     @GetMapping("/exam01/hello4")
     public String Hello4(Model model) {
 
@@ -107,13 +107,13 @@ public class HelloController {
         long lParam = 15L;
         double dParam = 20.2;
 
-//      줄복사 단축키 : ctrl + d
+    //      줄복사 단축키 : ctrl + d
         model.addAttribute("bFlag", bFlag);
         model.addAttribute("iParam", iParam);
         model.addAttribute("lParam", lParam);
         model.addAttribute("dParam", dParam);
 
-//      TODO: 기초 디버깅 : sout
+    //      TODO: 기초 디버깅 : sout
         System.out.println("[디버깅] : " + bFlag);
 
         return "exam01/example03.jsp";

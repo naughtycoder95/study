@@ -64,6 +64,7 @@ public class BoardController {
     public String addBoard() {
         return "exam01/board/add_board.jsp";
     }
+
 //    createBoard()
 //    - url : /board/add
 //    - redirect url : /exam01/board
@@ -74,6 +75,21 @@ public class BoardController {
 //        TODO: DB 에 저장하는 함수 실행(서비스)
         boardService.save(board);
 //        TODO: 저장 후 전체 조회 페이지로 강제 이동 : exam01/board
+        return new RedirectView("/exam01/board");
+    }
+
+    @GetMapping("/board/edition/{id}")
+    public String editBoard(@PathVariable int id,
+                            Model model) {
+        Board board = boardService.findById(id);
+        model.addAttribute("Board", board);
+        return ("/exam01/board/update_board");
+    }
+
+    @PutMapping("/board/edit/{id}")
+    public RedirectView updateBoard(@PathVariable int id,
+                                  @ModelAttribute Board board) {
+        boardService.save(board);
         return new RedirectView("/exam01/board");
     }
 

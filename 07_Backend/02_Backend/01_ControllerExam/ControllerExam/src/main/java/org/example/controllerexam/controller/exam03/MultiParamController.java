@@ -27,10 +27,10 @@ import java.util.List;
 public class MultiParamController {
 
     //    TODO: 예제 1) URL 매개변수 2개를 각각 jsp 전달하세요
-//      URL 테스트 : http://localhost:8000/exam03/hello-name-id?name=honggildong&id=hong
-//     함수명 :  setHelloNameId
-//      url  : /exam03/hello-name-id
-//      jsp  : exam03/hello_name_id.jsp
+    //      URL 테스트 : http://localhost:8000/exam03/hello-name-id?name=honggildong&id=hong
+    //     함수명 :  setHelloNameId
+    //      url  : /exam03/hello-name-id
+    //      jsp  : exam03/hello_name_id.jsp
     @GetMapping("/hello-name-id")
     public String setHelloNameId(Model model,
                                  @RequestParam(defaultValue = "") String name,
@@ -42,14 +42,14 @@ public class MultiParamController {
     }
 
     //  연습 1) URL 매개변수로 dno=10, dName=Accounting, loc=NewYork 받았다. 아래 결과를 화면에 출력하세요.
-//         url : /exam03/example01
-//         함수 : setExample01
-//         jsp : exam03/example01.jsp
-//         결과 :
-//              부서번호 : 10
-//              부서명 : Accounting
-//              위치 : NewYork
-//    url 테스트 : http://localhost:8000/exam03/example01?dno=10&dname=Accounting&loc=NewYork
+    //         url : /exam03/example01
+    //         함수 : setExample01
+    //         jsp : exam03/example01.jsp
+    //         결과 :
+    //              부서번호 : 10
+    //              부서명 : Accounting
+    //              위치 : NewYork
+    //    url 테스트 : http://localhost:8000/exam03/example01?dno=10&dname=Accounting&loc=NewYork
     @GetMapping("/example01")
     public String setExample01(Model model,
                                @RequestParam(defaultValue = "0") int dno,
@@ -63,19 +63,19 @@ public class MultiParamController {
     }
 
     //  TODO: 예제 2) URL 매개변수를 ArrayList 로 jsp 에 전달
-//   URL 테스트 : http://localhost:8000/exam03/hello-array?name=kang&id=forbob
-//    함수 : setHelloArray
-//    url : /hello-array
-//    jsp : exam03/hello_array.jsp
+    //   URL 테스트 : http://localhost:8000/exam03/hello-array?name=kang&id=forbob
+    //    함수 : setHelloArray
+    //    url : /hello-array
+    //    jsp : exam03/hello_array.jsp
     @GetMapping("/hello-array")
     public String setHelloArray(
             Model model,
             @RequestParam(defaultValue = "") String name,
             @RequestParam(defaultValue = "") String id
     ) {
-//        향상된 배열 : ArrayList
-//      복습 : List<자료형> 변수명 = new ArrayList<>();
-//        함수 : 변수명.add(값) , 변수명.get(인덱스번호)
+    //        향상된 배열 : ArrayList
+    //      복습 : List<자료형> 변수명 = new ArrayList<>();
+    //        함수 : 변수명.add(값) , 변수명.get(인덱스번호)
         List<String> list = new ArrayList<>();
         list.add(name);
         list.add(id);
@@ -86,17 +86,17 @@ public class MultiParamController {
     }
 
     //  TODO: 연습 2) 연습 1에서 작성한 dno, dname, loc 를 ArrayList 담아서 jsp 전달하세요
-//    화면에 출력시 부트스트랩 테이블을 이용해서 출력하세요
-//    url : /example02
-//    함수 : setExample02
-//    jsp : exam03/example02.jsp
-//    url 테스트 : http://localhost:8000/exam03/example02?dno=10&dname=Accounting&loc=NewYork
-//    힌트) List<String> list = new ArrayList<>();
-//        list.add(String.valueOf(dno));  // 숫자 -> 문자열 변환
-//    결과 : 테이블 형태로
-//      부서번호 : 10
-//      부서명 : Accounting
-//      위치 : NewYork
+    //    화면에 출력시 부트스트랩 테이블을 이용해서 출력하세요
+    //    url : /example02
+    //    함수 : setExample02
+    //    jsp : exam03/example02.jsp
+    //    url 테스트 : http://localhost:8000/exam03/example02?dno=10&dname=Accounting&loc=NewYork
+    //    힌트) List<String> list = new ArrayList<>();
+    //        list.add(String.valueOf(dno));  // 숫자 -> 문자열 변환
+    //    결과 : 테이블 형태로
+    //      부서번호 : 10
+    //      부서명 : Accounting
+    //      위치 : NewYork
     @GetMapping("/example02")
     public String setExample02(
             Model model,
@@ -104,9 +104,9 @@ public class MultiParamController {
             @RequestParam(defaultValue = "") String dname,
             @RequestParam(defaultValue = "") String loc
     ) {
-//        향상된 배열 : ArrayList
-//      복습 : List<자료형> 변수명 = new ArrayList<>();
-//        함수 : 변수명.add(값) , 변수명.get(인덱스번호)
+    //        향상된 배열 : ArrayList
+    //      복습 : List<자료형> 변수명 = new ArrayList<>();
+    //        함수 : 변수명.add(값) , 변수명.get(인덱스번호)
         List<String> list = new ArrayList<>();
         list.add(String.valueOf(dno));
         list.add(dname);
@@ -118,16 +118,16 @@ public class MultiParamController {
     }
 
     //  TODO: 연습 3) 아래 결과를 ArrayList 담아서 jsp 전달하세요
-//    화면에 출력시 부트스트랩 테이블을 이용해서 출력하세요
-//    url : /example03
-//    함수 : setExample03
-//    jsp : exam03/example03.jsp
-//    url 테스트 : http://localhost:8000/exam03/example03?eno=7788&ename=Scott&salary=3000&job=Manager
-//    결과 : 테이블 형태로
-//      사원번호 : 7788
-//      사원명 : Scott
-//      월급 : 3000
-//      직위 : Manager
+    //    화면에 출력시 부트스트랩 테이블을 이용해서 출력하세요
+    //    url : /example03
+    //    함수 : setExample03
+    //    jsp : exam03/example03.jsp
+    //    url 테스트 : http://localhost:8000/exam03/example03?eno=7788&ename=Scott&salary=3000&job=Manager
+    //    결과 : 테이블 형태로
+    //      사원번호 : 7788
+    //      사원명 : Scott
+    //      월급 : 3000
+    //      직위 : Manager
     @GetMapping("/example03")
     public String setExample03(
             Model model,
@@ -148,10 +148,10 @@ public class MultiParamController {
     }
 
     //  TODO: 예제 3: url 매개변수 3개 전달해서 jsp 에서 조건에따라 출력하세요
-//    URL 테스트 : http://localhost:8000/exam03/condition?name=삼식이&color=brown&kind=dog
-//    함수       : setCondition
-//    url       : /condition
-//    jsp       : exam03/condition.jsp
+    //    URL 테스트 : http://localhost:8000/exam03/condition?name=삼식이&color=brown&kind=dog
+    //    함수       : setCondition
+    //    url       : /condition
+    //    jsp       : exam03/condition.jsp
     @GetMapping("/condition")
     public String setCondition(Model model,
                                @RequestParam(defaultValue = "") String name,

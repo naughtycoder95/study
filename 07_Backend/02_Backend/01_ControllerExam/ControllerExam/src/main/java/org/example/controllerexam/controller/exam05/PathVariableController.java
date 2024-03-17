@@ -55,5 +55,13 @@ public class PathVariableController {
 //    jsp : exam05/example01.jsp
 //    결과 :
 //        10
+    @GetMapping("/path-variable/{num}")
+    public String getPathVariable(
+            @PathVariable int num,
+            Model model
+    ) {
+        model.addAttribute("num", num);
+        return "exam05/example01.jsp";
+    }
 
 }

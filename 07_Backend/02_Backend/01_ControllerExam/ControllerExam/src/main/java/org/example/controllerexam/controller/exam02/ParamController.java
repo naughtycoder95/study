@@ -42,8 +42,7 @@ public class ParamController {
 //          jsp : exam02/hello.jsp
 //    url 테스트 방법 : http://localhost:8000/exam02/hello-name?name=홍길동
     @GetMapping("/hello-name")
-    public String HelloName(Model model,
-                            @RequestParam(defaultValue = "") String name) {
+    public String HelloName(Model model, @RequestParam(defaultValue = "") String name) {
         model.addAttribute("greeting", "안녕하세요" + name);
         return "exam02/hello.jsp";
     }
@@ -55,8 +54,7 @@ public class ParamController {
 //               결과 : 부서명 : Sales
 //       url 테스트 : http://localhost:8000/exam02/hello-dname?dname=Sales
     @GetMapping("/hello-dname")
-    public String HelloName2(Model model,
-                             @RequestParam(defaultValue = "") String dname) {
+    public String HelloName2(Model model, @RequestParam(defaultValue = "") String dname) {
         model.addAttribute("greeting", "부서명 : " + dname);
         return "exam02/example01.jsp";
     }
@@ -68,8 +66,7 @@ public class ParamController {
     //         결과 : 20
     //    url 테스트 : http://localhost:8000/exam02/hello-no?no=20
     @GetMapping("/hello-no")
-    public String HelloName3(Model model,
-                             @RequestParam(defaultValue = "0") int no) {
+    public String HelloName3(Model model, @RequestParam(defaultValue = "0") int no) {
         model.addAttribute("greeting", "부서명 : " + no);
         return "exam02/example02.jsp";
     }

@@ -15,9 +15,11 @@
 </head>
 <body>
     <div class="container">
-        <h2>PathVariable 전달받기 : 연습</h2>
+        <h2>PathVariable 3개 전달받기 : 연습</h2>
 <%--     JSP el 표현식 --%>
-        <p>${num}</p>
+        <p>${dno}</p>
+        <p>${dname}</p>
+        <p>${loc}</p>
     </div>
 </body>
 </html>

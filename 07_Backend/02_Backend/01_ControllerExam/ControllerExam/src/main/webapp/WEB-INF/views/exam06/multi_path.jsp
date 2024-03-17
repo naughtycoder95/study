@@ -15,9 +15,10 @@
 </head>
 <body>
     <div class="container">
-        <h2>PathVariable 전달받기 : 연습</h2>
+        <h2>PathVariable 2개 전달받기</h2>
 <%--     JSP el 표현식 --%>
-        <p>${num}</p>
+        <p>${id}</p>
+        <p>${name}</p>
     </div>
 </body>
 </html>

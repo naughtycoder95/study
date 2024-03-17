@@ -56,8 +56,8 @@ public class PathVariableController {
 //    결과 :
 //        10
     @GetMapping("/path-variable/{num}")
-    public String getPathVariable(
-            @PathVariable int num,
+    public String Example01(
+            @PathVariable long num,
             Model model
     ) {
         model.addAttribute("num", num);

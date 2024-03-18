@@ -64,7 +64,6 @@ public class BoardController {
     public String addBoard() {
         return "exam01/board/add_board.jsp";
     }
-
 //    createBoard()
 //    - url : /board/add
 //    - redirect url : /exam01/board
@@ -78,18 +77,43 @@ public class BoardController {
         return new RedirectView("/exam01/board");
     }
 
+//    editBoard() : 수정페이지 열기 함수
+//    - url : /board/edition/{id}
+//    - jsp : exam01/board/update_board.jsp
     @GetMapping("/board/edition/{id}")
     public String editBoard(@PathVariable int id,
-                            Model model) {
+                            Model model
+                            ) {
+//        1) 기본키로(게시판번호(id)) 상세 조회
         Board board = boardService.findById(id);
-        model.addAttribute("Board", board);
-        return ("/exam01/board/update_board");
+        model.addAttribute("board", board);
+        return "exam01/board/update_board.jsp";
     }
 
+
+//    updateBoard() : 수정 버튼 클릭시 실행되는 함수
+//    - url : /board/edit/{id}
+//    - redirect(강제 페이지이동) url : /exam01/board (전체조회)
+//    수정 : put 방식 -> @PutMapping
     @PutMapping("/board/edit/{id}")
     public RedirectView updateBoard(@PathVariable int id,
-                                  @ModelAttribute Board board) {
+                                    @ModelAttribute Board board
+                                    ) {
+//        TODO: 수정 서비스 함수 실행
         boardService.save(board);
+//        TODO: 전체 조회 페이지 강제 이동
+        return new RedirectView("/exam01/board");
+    }
+
+//    deleteBoard()
+//    - url : /board/delete/{id}
+//    - redirect url : /exam01/board
+//    삭제 : delete 방식(form:html) -> @DeleteMapping(spring)
+    @DeleteMapping("/board/delete/{id}")
+    public RedirectView deleteBoard(@PathVariable int id) {
+//        TODO: 삭제 서비스 함수 실행
+        boardService.removeById(id);
+//        TODO: 전체조회 페이지로 리다이렉트(강제 이동)
         return new RedirectView("/exam01/board");
     }
 

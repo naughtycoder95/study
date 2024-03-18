@@ -77,6 +77,8 @@ public class BoardService {
 //      게시판번호가 있으면       : update
         if(board.getId() == null) {
             list = boardDao.insert(board); // 게시판번호 자동생성(시퀀스)
+        } else {
+            list = boardDao.update(board); // 게시판번호 있음(수정)
         }
 
         return list;
@@ -91,6 +93,21 @@ public class BoardService {
 //    updateBoard()
 //    - url : /board/edit/{id}
 //    - redirect url : /exam01/board
+
+//  todo: 연습 6-2)
+//    BoardService 클래스를 만들고 removeById() 함수를 정의한다.
+//    BoardController 클래스를 만들어서 deleteBoard() 함수를 정의
+//    update_board.jsp 삭제버튼과 url 를 추가한다.
+//    deleteBoard()
+//    - url : /board/delete/{id}
+//    - redirect url : /exam01/board
+    public boolean removeById(int dno) {
+//        삭제 DB 함수 호출 : 리턴값(삭제된 건수)
+        int count = boardDao.deleteById(dno);
+        return (count > 0)? true : false;
+    }
+
+
 }
 
 

@@ -1,0 +1,38 @@
+package org.example.jpaexam.service.basic;
+
+import org.example.jpaexam.model.entity.basic.Dept;
+import org.example.jpaexam.repository.basic.DeptRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * packageName : org.example.jpaexam.service.basic
+ * fileName : DeptService
+ * author : GGG
+ * date : 2024-03-19
+ * description : CRUD DB 함수를 실행하는 서비스 함수 정의
+ * 요약 :
+ *      목적 : MVC 디자인 패턴에 의해 역할에 따라 자바 클래스를 정의함
+ *      @Service, @Repository, 등 : IOC, 스프링 서버가 실행될때
+ *          클래스를 생성해줌
+ * <p>
+ * ===========================================================
+ * DATE            AUTHOR             NOTE
+ * -----------------------------------------------------------
+ * 2024-03-19         GGG          최초 생성
+ */
+@Service
+public class DeptService {
+
+//    DB CRUD 클래스 받기 : JPA 제공 함수 사용 가능
+    @Autowired
+    DeptRepository deptRepository;
+
+    public List<Dept> findAll() {
+//        JPA 전체조회 함수 실행 : select 문 자동 작성
+        List<Dept> list = deptRepository.findAll();
+        return list;
+    }
+}

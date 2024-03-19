@@ -3,6 +3,8 @@ package org.example.jpaexam.service.basic;
 import org.example.jpaexam.model.entity.basic.Dept;
 import org.example.jpaexam.repository.basic.DeptRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,9 +32,25 @@ public class DeptService {
     @Autowired
     DeptRepository deptRepository;
 
+    /**
+     * 전체 조회 : 페이징 없음
+     * @return 부서 배열
+     */
     public List<Dept> findAll() {
 //        JPA 전체조회 함수 실행 : select 문 자동 작성
         List<Dept> list = deptRepository.findAll();
         return list;
+    }
+
+    /**
+     * like 검색 함수 : 페이징 처리
+     * @param dname
+     * @param pageable
+     * @return
+     */
+    public Page<Dept> findAllByDnameContaining(String dname, Pageable pageable) {
+//        DB like 검색 함수 실행 : 페이징 처리
+        Page<Dept> page = deptRepository.findAllByDnameContaining(dname, pageable);
+        return page;
     }
 }

@@ -22,7 +22,7 @@ import java.util.List;
  * date : 2024-03-19
  * description : 부서 컨트롤러
  * 요약 :
- *      컨트롤러 : 함수에 url 달수 있고, return 값은 jsp 보낼수 있음
+ * 컨트롤러 : 함수에 url 달수 있고, return 값은 jsp 보낼수 있음
  * <p>
  * ===========================================================
  * DATE            AUTHOR             NOTE
@@ -40,7 +40,7 @@ public class DeptController {
 
     //    전체 조회 + like 검색 + 페이징 처리
 //    복습 : 매개변수 전달 방식 : 1) 쿼리스트링   : @RequestParam
-//                             2) 파라메터방식 : @PathVariable
+//                           2) 파라메터방식 : @PathVariable
     @GetMapping("/dept")
     public String getDeptAll(
             @RequestParam(defaultValue = "") String dname,
@@ -52,11 +52,27 @@ public class DeptController {
 //            2) 1페이지 당 개수 : size
         Pageable pageable = PageRequest.of(page, size);
 //        TODO: DB like 검색 서비스 함수 실행
-        Page<Dept> pageRes
-                = deptService
-                .findAllByDnameContaining(dname, pageable);
-//        결과를 jsp 전송
-        model.addAttribute("pageRes",pageRes);
+        Page<Dept> pageRes = deptService.findAllByDnameContaining(dname, pageable);
+//        Page 객체 : 굉장히 많은 속성이 있음 : 현재 페이지 번호 등
+//        자바 자료구조(컬렉션 프레임워크) : List, Map<키, 값>
+//        JSP 로 보낼 정보 : 1) 부서정보(배열)         2) 현재 페이지 번호
+//                        3) 전체 테이블 건수        4) 전체 페이지 개수
+//                        5) 블럭 시작페이지 번호     6) 블럭 끝페이지 번호
+        model.addAttribute("dept", pageRes.getContent());                // 1) 부서정보(배열)
+        model.addAttribute("currentPage", pageRes.getNumber());          // 2) 현재 페이지 번호
+        model.addAttribute("totalItems", pageRes.getTotalElements());    // 3) 전체 테이블 개수
+        model.addAttribute("totalPages", pageRes.getTotalPages());       // 4) 전체 페이지 개수
+
+//       5) 블럭 시작페이지 번호 공식 : 블럭 시작페이지 번호 = (Math.floor(현재페이지번호/1페이지당개수)) * 1페이지당개수
+        long blockStartPage = (long) Math.floor((double) (pageRes.getNumber()) / size) * size;
+        model.addAttribute("startPage", blockStartPage);
+
+//       6) 블럭 끝페이지 번호 공식 : 블럭 끝페이지 번호 = 블럭 시작페이지번호 + 1페이자당개수 - 1
+        long blockEndPage = blockStartPage + size - 1;
+//        블럭 끝페이지 번호 >= 전체페이지 번호 -> 발생 가능
+//        블럭 끝페이지 번호 = 전체페이지 번호 (값 보정)
+        blockEndPage = (blockEndPage >= pageRes.getTotalPages()) ? pageRes.getTotalPages() - 1 : blockEndPage;
+        model.addAttribute("endPage", blockEndPage);
         return "basic/dept/dept_all.jsp";
     }
 }

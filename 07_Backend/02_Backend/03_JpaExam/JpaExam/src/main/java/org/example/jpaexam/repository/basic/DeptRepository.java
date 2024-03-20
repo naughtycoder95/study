@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * packageName : org.example.jpaexam.repository.basic
  * fileName : DeptRepository
@@ -48,9 +50,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DeptRepository extends JpaRepository<Dept,Integer> {
     @Query(value = "SELECT D.* FROM TB_DEPT D\n" +
-            "WHERE D.DNAME LIKE '%'|| :dname ||'%'"
-            , countQuery = "SELECT count(*) FROM TB_DEPT D\n" +
-            "WHERE D.DNAME LIKE '%'|| :dname ||'%'"
+            "WHERE UPPER(D.DNAME) LIKE UPPER('%'|| :dname ||'%')"
+            , countQuery = "SELECT COUNT(*) FROM TB_DEPT D\n" +
+            "WHERE UPPER(D.DNAME) LIKE UPPER('%'|| :dname ||'%')"
             , nativeQuery = true)
     Page<Dept> findAllByDnameContaining(
             @Param("dname") String dname,

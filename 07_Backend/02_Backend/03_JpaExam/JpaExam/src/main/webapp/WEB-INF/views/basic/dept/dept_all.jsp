@@ -13,11 +13,8 @@
 </head>
 <body>
 <%--    머리말 --%>
-<jsp:include page="../../common/header.jsp" />
+<jsp:include page="../../common/header.jsp"/>
 <%--    본문--%>
-<div class="container">
-    <%--        TODO: 검색어 입력 상자 --%>
-
     <%--        TODO: 테이블 --%>
     <table class="table">
         <thead>
@@ -41,6 +38,30 @@
         </c:forEach>
         </tbody>
     </table>
+
+<div class="container">
+    <%--        TODO: 검색어 입력 상자 --%>
+    <%--    복습 : get(조회:select, @GetMapping) --%>
+    <%--    부트스트랩 복습 : row(행) --%>
+    <%--                    justify-content-center : 중앙정렬--%>
+    <%--                    g-3                    : 거터(빈공간) 3칸정도 --%>
+    <form class="row g-3 justify-content-center" action="/basic/dept" method="get">
+        <%--        TODO: 검색 input 태그 --%>
+        <div class="col-auto mt-3 mb-3">
+            <input type="text"
+                   class="form-control"
+                   id="dname"
+                   name="dname"
+                   placeholder="부서명입력">
+            <%--            page(현재페이지번호), size(1페이지당개수) --%>
+            <input type="hidden" id="page" name="page" value="0"/>
+            <input type="hidden" id="size" name="size" value="3"/>
+        </div>
+        <%--        TODO: 검색 버튼--%>
+        <div class="col-auto mt-3 mb-3">
+            <button type="submit" class="btn btn-primary">검색</button>
+        </div>
+    </form>
 
     <%--        TODO: 페이지번호 --%>
     <%--  복습 : class="d-flex justify-content-center" : 중앙정렬 --%>
@@ -73,7 +94,7 @@
     </div>
 </div>
 <%--    꼬리말--%>
-<jsp:include page="../../common/footer.jsp" />
+<jsp:include page="../../common/footer.jsp"/>
 
 </body>
 </html>

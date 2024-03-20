@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * packageName : org.example.jpaexam.service.basic
@@ -28,7 +29,7 @@ import java.util.List;
 @Service
 public class DeptService {
 
-//    DB CRUD 클래스 받기 : JPA 제공 함수 사용 가능
+    //    DB CRUD 클래스 받기 : JPA 제공 함수 사용 가능
     @Autowired
     DeptRepository deptRepository;
 
@@ -48,9 +49,35 @@ public class DeptService {
      * @param pageable
      * @return
      */
-    public Page<Dept> findAllByDnameContaining(String dname, Pageable pageable) {
-//        DB like 검색 함수 실행 : 페이징 처리
-        Page<Dept> page = deptRepository.findAllByDnameContaining(dname, pageable);
+    public Page<Dept> findAllByDnameContaining(String dname,
+                                               Pageable pageable) {
+//      DB like 검색 함수 실행 : 페이징 처리
+        Page<Dept> page
+                = deptRepository
+                .findAllByDnameContaining(dname, pageable);
         return page;
+    }
+
+    /**
+     * 상세조회 : return : 객체 1개 (null 가능성 있음)
+     *  복습 : null 방지 래퍼클래스 : Optional<객체>
+     * @param dno(부서번호)
+     * @return 옵셔널 부서 객체
+     */
+    public Optional<Dept> findById(int dno) {
+//        JPA 상세조회 함수 실행
+        Optional<Dept> optionalDept
+                = deptRepository.findById(dno);
+        return optionalDept;
+    }
+
+    //    저장/수정 : 1) 기본키가(부서번호) 없으면 저장(insert)
+//               2) 기본키가(부서번호) 있으면 수정(update)
+//           => JPA 내부적으로 if문 있음 : 알아서 실행됨
+    public Dept save(Dept dept) {
+//        JPA 저장 함수 실행 : return 값 : 저장된 객체
+        Dept dept2 = deptRepository.save(dept);
+
+        return dept2;
     }
 }

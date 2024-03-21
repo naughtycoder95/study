@@ -35,7 +35,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @AllArgsConstructor
 @ToString
 public class Emp extends BaseTimeEntity {
-    //    연습 1) : Emp, EmpRepository, EmpService, EmpController, emp_all.jsp
+//    연습 1) : Emp, EmpRepository, EmpService, EmpController, emp_all.jsp
 //       함수 : 전체 조회 : 페이징 없이 : findAll()
 //    대/소문자 바꾸기 단축키 : ctrl + shift + u(cmd + shift + u)
     @Id

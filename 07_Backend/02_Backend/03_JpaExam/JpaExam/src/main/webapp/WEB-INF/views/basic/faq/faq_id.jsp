@@ -15,7 +15,7 @@
 <jsp:include page="../../common/header.jsp" />
 <%--본문--%>
 <div class="container">
-    ${dept}
+    ${faq}
 </div>
 <%--꼬리말--%>
 <jsp:include page="../../common/footer.jsp" />

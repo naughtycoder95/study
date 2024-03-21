@@ -9,11 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.example.jpaexam.model.entity.basic.Emp;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,11 +34,11 @@ import java.util.Optional;
 @RequestMapping("/basic")
 public class EmpController {
 
-    //    DB 서비스 클래스 가져오기
+//    DB 서비스 클래스 가져오기
     @Autowired
     EmpService empService;
 
-    //    전체조회
+//    전체조회
 //    TODO: 페이징 복습 : page(현재페이지번호), size(1페이지당개수)
     @GetMapping("/emp")
     public String getEmpAll(
@@ -53,7 +51,7 @@ public class EmpController {
 //        DB like 검색 서비스 함수 실행 : 페이징 처리
         Page<Emp> pageRes
                 = empService
-                .findAllByEnameContaining(ename, pageable);
+                    .findAllByEnameContaining(ename, pageable);
 //        jsp 전송 : emp 배열, 현재페이지번호, 전체테이블개수 등(6개)
         model.addAttribute("emp",pageRes.getContent());              // 1) 사원정보(배열)
         model.addAttribute("currentPage",pageRes.getNumber());        // 2) 현재페이지번호
@@ -76,7 +74,7 @@ public class EmpController {
         return "basic/emp/emp_all.jsp";
     }
 
-    //    상세조회 : (테스트목적)
+//    상세조회 : (테스트목적)
     @GetMapping("/emp/{eno}")
     public String getEmpId(@PathVariable int eno,
                            Model model) {
@@ -88,8 +86,52 @@ public class EmpController {
         return "basic/emp/emp_id.jsp";
     }
 
+//    저장 : 1) 저장(추가) 페이지 열기
     @GetMapping("/emp/addition")
     public String addEmp() {
         return "basic/emp/add_emp.jsp";
+    }
+//          2) 저장 버튼 클릭시 실행될 함수
+    @PostMapping("/emp/add")
+    public RedirectView createEmp(@ModelAttribute Emp emp) {
+//        DB 저장 서비스 실행
+        empService.save(emp);
+//        전체 조회 페이지로 강제이동(리다이렉트)
+        return new RedirectView("/basic/emp");
+    }
+
+//    TODO: 연습 : 수정페이지 열기 함수        : editEmp
+//                 jsp                     : basic/emp/update_emp.jsp
+//                수정 버튼 클릭시 실행될 함수 : updateEmp
+//  수정페이지 열기 함수
+    @GetMapping("/emp/edition/{eno}")
+    public String editEmp(@PathVariable int eno,
+                          Model model
+                          ){
+//        DB 상세조회 서비스 실행 : 옵셔널 객체
+        Optional<Emp> optionalEmp = empService.findById(eno);
+//        옵셔널객체에서 사원객체 꺼내서 전송
+        model.addAttribute("emp", optionalEmp.get());
+        return "basic/emp/update_emp.jsp";
+    }
+//    수정 버튼 클릭시 실행될 update 함수
+//    update -> put 방식 -> @PutMapping
+    @PutMapping("/emp/edit/{eno}")
+    public RedirectView updateEmp(@PathVariable int eno,
+                                  @ModelAttribute Emp emp
+                                  ) {
+//        DB 수정 서비스 함수 실행
+        empService.save(emp);
+//        전체 조회 페이지로 강제 이동
+        return new RedirectView("/basic/emp");
+    }
+
+//    삭제 함수
+//    delete -> delete 방식 -> @DeleteMapping
+    @DeleteMapping("/emp/delete/{eno}")
+    public RedirectView deleteEmp(@PathVariable int eno) {
+//        DB 삭제 서비스 함수 실행
+        empService.removeById(eno);
+        return new RedirectView("/basic/emp");
     }
 }

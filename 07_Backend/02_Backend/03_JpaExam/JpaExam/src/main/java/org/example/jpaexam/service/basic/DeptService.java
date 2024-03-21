@@ -29,7 +29,7 @@ import java.util.Optional;
 @Service
 public class DeptService {
 
-    //    DB CRUD 클래스 받기 : JPA 제공 함수 사용 가능
+//    DB CRUD 클래스 받기 : JPA 제공 함수 사용 가능
     @Autowired
     DeptRepository deptRepository;
 
@@ -54,7 +54,7 @@ public class DeptService {
 //      DB like 검색 함수 실행 : 페이징 처리
         Page<Dept> page
                 = deptRepository
-                .findAllByDnameContaining(dname, pageable);
+                        .findAllByDnameContaining(dname, pageable);
         return page;
     }
 
@@ -71,7 +71,7 @@ public class DeptService {
         return optionalDept;
     }
 
-    //    저장/수정 : 1) 기본키가(부서번호) 없으면 저장(insert)
+//    저장/수정 : 1) 기본키가(부서번호) 없으면 저장(insert)
 //               2) 기본키가(부서번호) 있으면 수정(update)
 //           => JPA 내부적으로 if문 있음 : 알아서 실행됨
     public Dept save(Dept dept) {
@@ -79,5 +79,21 @@ public class DeptService {
         Dept dept2 = deptRepository.save(dept);
 
         return dept2;
+    }
+
+//    삭제 함수
+    public boolean removeById(int dno) {
+//        JPA 삭제함수 : deleteById(기본키)
+//        1) 먼저 기본키가 테이블에 있으면 삭제, true 리턴
+//           없으면 false 리턴
+
+//        사용법 : jpa레포지토리.existsById(기본키)
+//         => 기본키가 테이블에 있으지 확인. 있으면 true, 없으면 false
+        if(deptRepository.existsById(dno) == true) {
+            deptRepository.deleteById(dno);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

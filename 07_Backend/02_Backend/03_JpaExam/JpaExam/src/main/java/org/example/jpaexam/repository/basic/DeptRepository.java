@@ -8,8 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 /**
  * packageName : org.example.jpaexam.repository.basic
  * fileName : DeptRepository
@@ -30,17 +28,20 @@ import java.util.List;
  *                  저장 : 기본키가 없으면 insert
  *                  수정 : 기본키가 있으면 update
  *             - deleteById(기본키): 삭제 , 자동 sql 문 생성
- *      페이징 처리 + like 검색어 :
- *          1) like 검색 sql 문 작성 :
- *          2) 페이징 처리 : 테이블 개수 세기 sql 문 추가로 들어가야함
- *      사용법 : @Query(value="sql 문", countQuery ="sql 문2", nativeQuery=true)
- *          - @Param("매개변수명") : sql 문 속으로 함수의 매개변수값을 전달하기 위한 어노테이션
- *          - select ~ where 컬럼명 like :매개변수명 : 함수매개변수 == :매개변수 (일치)
- *          - JPA @Query 옵션 : nativeQuery = true : 오라클 SQL 문 사용가능
- *                             nativeQuery = false : 객체 SQL 문(JPQL) 사용해야함(참고), 생략가능
- *      Page<엔티티>객체 : 페이징된 결과값을 저장할 객체(함수의 리턴값으로 사용)
- *          - 예) 속성 : 현재페이지번호, 전체페이지건수 등
- *      Pageable   객체 : 페이징하기 위한 객체(함수의 매개변수로 사용)
+ *
+ * // 페이징 처리 + like 검색어 :
+ * //    1) like 검색 sql 문 작성 :
+ * //    2) 페이징 처리 : 테이블 개수 세기 sql 문 추가로 들어가야함
+ * //    사용법 : @Query(value="sql 문", countQuery ="sql 문2", nativeQuery=true)
+ * //      - @Param("매개변수명") : sql 문 속으로 함수의 매개변수값을 전달하기 위한 어노테이션
+ * //      - select ~ where 컬럼명 like :매개변수명 : 함수매개변수 == :매개변수 (일치)
+ *         - JPA @Query 옵션 : nativeQuery=true[false]
+ *                1) nativeQuery=true  : 오라클 sql 문 사용가능
+ *                2) nativeQuery=false : 객체 sql 문(JPQL) 사용해야함(참고)
+ *                                       , 생략가능
+ *    Page<엔티티>객체 : 페이징된 결과값을 저장할 객체(함수의 리턴값으로 사용)
+ *         - 예) 속성 : 현재페이지번호, 전체페이지건수 등
+ *    Pageable   객체 : 페이징하기 위한 객체(함수의 매개변수로 사용)
  * <p>
  * ===========================================================
  * DATE            AUTHOR             NOTE
@@ -50,15 +51,29 @@ import java.util.List;
 @Repository
 public interface DeptRepository extends JpaRepository<Dept,Integer> {
     @Query(value = "SELECT D.* FROM TB_DEPT D\n" +
-            "WHERE UPPER(D.DNAME) LIKE UPPER('%'|| :dname ||'%')"
-            , countQuery = "SELECT COUNT(*) FROM TB_DEPT D\n" +
-            "WHERE UPPER(D.DNAME) LIKE UPPER('%'|| :dname ||'%')"
+                   "WHERE D.DNAME LIKE '%'|| :dname ||'%'"
+            , countQuery = "SELECT count(*) FROM TB_DEPT D\n" +
+                   "WHERE D.DNAME LIKE '%'|| :dname ||'%'"
             , nativeQuery = true)
     Page<Dept> findAllByDnameContaining(
             @Param("dname") String dname,
             Pageable pageable
     );
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

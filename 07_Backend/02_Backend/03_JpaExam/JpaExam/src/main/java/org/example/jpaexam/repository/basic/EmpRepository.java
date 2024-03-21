@@ -1,6 +1,5 @@
 package org.example.jpaexam.repository.basic;
 
-import org.example.jpaexam.model.entity.basic.Dept;
 import org.example.jpaexam.model.entity.basic.Emp;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,26 +11,30 @@ import org.springframework.stereotype.Repository;
 /**
  * packageName : org.example.jpaexam.repository.basic
  * fileName : EmpRepository
- * author : kimtaewan
- * date : 2024-03-19
- * description : 사원 레포지토리 : 사원 JPA CRUD 함수가 있는 인터페이스
+ * author : GGG
+ * date : 2024-03-20
+ * description : 사원 레포지토리 : 사원 JPA CRUD 함수있는 인터페이스
  * 요약 :
  * <p>
  * ===========================================================
  * DATE            AUTHOR             NOTE
  * -----------------------------------------------------------
- * 2024-03-19         kimtaewan          최초 생성
+ * 2024-03-20         GGG          최초 생성
  */
 @Repository
-public interface EmpRepository extends JpaRepository<Emp,Integer> {
+public interface EmpRepository extends JpaRepository<Emp, Integer> {
+//    like 검색 함수 : JPA sql 직접 작성 :
+//       @Query(value="sql문",countQuery="sql문2", nativeQuery = true)
     @Query(value = "SELECT E.* FROM TB_EMP E\n" +
-            "WHERE UPPER(E.ENAME) LIKE UPPER('%'|| :ename ||'%')"
-            , countQuery = "SELECT COUNT(*) FROM TB_EMP E\n" +
-            "WHERE UPPER(E.ENAME) LIKE UPPER('%'|| :ename ||'%')"
+                   "WHERE ENAME LIKE '%'|| :ename ||'%'"
+            , countQuery = "SELECT count(*) FROM TB_EMP E\n" +
+                    "WHERE ENAME LIKE '%'|| :ename ||'%'"
             , nativeQuery = true)
-
     Page<Emp> findAllByEnameContaining(
-            @Param("ename") String ename,
-            Pageable pageable
+        @Param("ename") String ename,
+        Pageable pageable
     );
+
+
+
 }

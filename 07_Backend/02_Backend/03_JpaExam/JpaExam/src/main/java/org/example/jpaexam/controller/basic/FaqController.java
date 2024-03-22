@@ -116,4 +116,14 @@ public class FaqController {
         faqService.save(faq); // 수정
         return new RedirectView("/basic/faq");
     }
+
+//    삭제 함수
+//    delete 문 -> delete 방식 -> @DeleteMapping
+    @DeleteMapping("/faq/delete/{fno}")
+    public RedirectView deleteFaq(@PathVariable int fno) {
+//        DB 서비스 삭제 함수 실행
+        faqService.removeById(fno);
+//        JSP 의 전체조회 강제 이동
+        return new RedirectView("/basic/faq");
+    }
 }

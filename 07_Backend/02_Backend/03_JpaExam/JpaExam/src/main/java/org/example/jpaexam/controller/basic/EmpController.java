@@ -59,10 +59,14 @@ public class EmpController {
         model.addAttribute("totalPages",pageRes.getTotalPages());     // 4) 전체 페이지 개수
 
 //     공식 : 블럭 시작페이지 번호 = (Math.floor(현재페이지번호/1페이지당개수)) * 1페이지당개수
-        long blockStartPage = (long) Math.floor((double) (pageRes.getNumber())/size) * size;
+//     TODO: size -> 3
+//       페이지번호 화면에 보이기 변수
+        long pageNo = 4;
+        long blockStartPage = (long) Math.floor((double) (pageRes.getNumber())/pageNo) * pageNo;
         model.addAttribute("startPage", blockStartPage);              // 5) 블럭 시작페이지번호
 //     공식 : 블럭 끝페이지 번호 = 블럭 시작페이지번호 + 1페이자당개수 - 1
-        long blockEndPage = blockStartPage + size - 1;
+//       TODO: size -> 3
+        long blockEndPage = blockStartPage + pageNo - 1;
 //        블럭 끝페이지 번호 >=  전체페이지번호 : 이 경우가 발생할 수 있음
 //        블럭 끝페이지 번호 = 전체페이지번호 - 1 (값 보정)
         blockEndPage = (blockEndPage >= pageRes.getTotalPages())?pageRes.getTotalPages()-1:blockEndPage;
@@ -70,6 +74,8 @@ public class EmpController {
         blockEndPage = (blockEndPage < 0)? 0 : blockEndPage;
 
         model.addAttribute("endPage", blockEndPage);
+//        TODO: ename -> jsp 전송
+        model.addAttribute("ename", ename);
 
         return "basic/emp/emp_all.jsp";
     }

@@ -17,10 +17,12 @@
 </head>
 <body>
 <%-- 부트스트랩 메뉴 --%>
+<%-- 찾기 : ctrl + f --%>
+<%-- 찾기/바꾸기 : ctrl + r --%>
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <%--     1번째 메뉴 : Navbar -> Simple   --%>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <%--     TODO: 이미지 넣기 --%>
             <img src="/resources/img/simple-coding.png" width="20" height="20"/>
             Simple

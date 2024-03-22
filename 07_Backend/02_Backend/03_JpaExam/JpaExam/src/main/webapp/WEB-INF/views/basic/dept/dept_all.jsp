@@ -16,6 +16,7 @@
 <jsp:include page="../../common/header.jsp"/>
 <%--    본문--%>
 <div class="container">
+    <p>${num}</p>
     <%--        TODO: 검색어 입력 상자 --%>
     <%--    복습 : get(조회:select, @GetMapping) --%>
     <%--    부트스트랩 복습 : row(행) --%>

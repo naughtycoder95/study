@@ -1,6 +1,7 @@
 package org.example.jpaexam.controller.advanced;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.jpaexam.model.entity.advanced.FileDb;
 import org.example.jpaexam.model.entity.advanced.Gallery;
 import org.example.jpaexam.service.advanced.GalleryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.Optional;
 
 /**
  * packageName : org.example.jpaexam.controller.advanced
@@ -82,7 +85,7 @@ public class GalleryController {
         return "advanced/gallery/add_gallery.jsp";
     }
 
-//          2) 버튼 클릭시 저장 함수
+    //          2) 버튼 클릭시 저장 함수
 //    insert -> post 방식 -> @PostMapping
     @PostMapping("/gallery/add")
     public RedirectView createGallery(
@@ -98,7 +101,7 @@ public class GalleryController {
         return new RedirectView("/advanced/gallery");
     }
 
-//          3) 파일 다운로드 함수 : jsp 에서 a 태그 클릭 또는 img 태그 사용시 실행될 함수
+    //          3) 파일 다운로드 함수 : jsp 에서 a 태그 클릭 또는 img 태그 사용시 실행될 함수
     @GetMapping("/gallery/{uuid}")
     @ResponseBody
     public ResponseEntity<byte[]> findDownloadGallery(
@@ -115,13 +118,46 @@ public class GalleryController {
                 .body(gallery.getGalleryData());  // 실제 이미지 전송
     }
 
+    //    삭제 함수
+//    delete -> delete 방식 -> @DeleteMapping
     @DeleteMapping("/gallery/delete/{uuid}")
-    public RedirectView deleteFileDb(
+    public RedirectView deleteGallery(
             @PathVariable String uuid
-    ){
-//        DB 삭제 서비스 실행
+    ) {
+//        DB 서비스 삭제 함수 실행
         galleryService.removeById(uuid);
-//        jsp 전체 조회 페이지 강제 이동
+        return new RedirectView("/advanced/gallery");
+    }
+
+    //    수정 : 1) 수정페이지 열기 : 상세조회
+    @GetMapping("/gallery/edition/{uuid}")
+    public String editGallery(
+            @PathVariable String uuid,
+            Model model
+    ) {
+//        1) 상세조회
+        Optional<Gallery> optionalGallery
+                = galleryService.findById(uuid);
+//        2) 결과 jsp 전달
+        model.addAttribute("gallery", optionalGallery.get());
+        return "advanced/gallery/update_gallery.jsp";
+    }
+
+    //          2) 수정버튼 클릭시 update 함수
+//    update -> put 방식 -> @PutMapping
+    @PutMapping("/gallery/edit/{uuid}")
+    public RedirectView updateGallery(
+            @PathVariable String uuid,
+            @RequestParam(defaultValue = "") String galleryTitle,
+            @RequestParam MultipartFile image
+    ) {
+        try {
+//            DB 수정 : save()
+            galleryService.save(uuid, galleryTitle, image);
+        } catch (Exception e) {
+            log.debug(e.getMessage());
+        }
+//        강제 이동
         return new RedirectView("/advanced/gallery");
     }
 }

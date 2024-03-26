@@ -81,6 +81,23 @@ public class GalleryService {
                 gallery2 = galleryRepository.save(gallery); // DB 저장
             } else {
 //            TODO: update : 기본키(uuid) 있으면
+                //            TODO: update : 기본키(uuid) 있으면
+//                1-1) uuid 생성(생략) : why? 있음
+//                1-2) 파일 다운로드 url 생성 :
+                String fileDownload = ServletUriComponentsBuilder
+                        .fromCurrentContextPath()  // spring 기본주소 : http://localhost:8000
+                        .path("/advanced/gallery/") // 추가 경로 넣기 : /advanced/gallery/
+                        .path(uuid)                // uuid 넣기     : xxxxxx
+                        .toUriString(); // 합치기 : http://localhost:8000/advanced/gallery/xxxxxx
+//             TODO: 1-3) Gallery 객체 생성(생성자, setter) + save()
+                Gallery gallery = new Gallery(
+                        uuid,                       // 기존 uuid
+                        galleryTitle,               // 제목
+                        file.getOriginalFilename(), // 업로드 할때 파일명
+                        file.getBytes(),            // 업로드 이미지
+                        fileDownload                // 파일 다운로드 url
+                );
+                gallery2 = galleryRepository.save(gallery);  // DB 수정
 
             }
         } catch (Exception e) {
@@ -94,12 +111,18 @@ public class GalleryService {
         return galleryRepository.findById(uuid);
     }
 
+
+    //    연습 : Gallery 도 FileDB 참고해서 삭제 기능을 완성하세요
+//    삭제 함수
     public boolean removeById(String uuid) {
-        if(galleryRepository.existsById(uuid) == true) {
+        if (galleryRepository.existsById(uuid) == true) {
             galleryRepository.deleteById(uuid);
             return true;
         } else {
             return false;
         }
     }
+
+//    연습 : Gallery 도 FileDB 참고해서 수정 기능을 완성하세요
+
 }

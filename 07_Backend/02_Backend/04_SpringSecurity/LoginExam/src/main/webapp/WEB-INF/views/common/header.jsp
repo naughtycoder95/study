@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--    jsp : spring security 용 taglib --%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <html>
 <head>
     <title>Title</title>
@@ -106,26 +109,41 @@
             </ul>
             <%--    TODO: 우측 메뉴 : ms-auto(왼쪽은 자동으로 마진 부여 : 오른쪽에 붙임)--%>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <%--   소메뉴 : Admin #1 : 관리자면 이 메뉴보이고, 사용자는 안보임 --%>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Admin</a>
-                </li>
-                <%--                회원가입 #2 : register --%>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/auth/register">회원가입</a>
-                </li>
-                <%--                로그인 #3 : Login --%>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/auth/customLogin">Login</a>
-                </li>
-                <%--                로그아웃 #4 : Logout : form 태그 달기(post 방식) --%>
-                <li class="nav-item">
-                    <form action="/auth/customLogout" method="post">
-                        <button type="submit" class="btn">Logout</button>
-                        <%--  TODO: csrf 보안 토큰 : 해킹 방지 토큰 --%>
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    </form>
-                </li>
+                <%--   TODO: 소메뉴 : Admin #1 : 관리자면 이 메뉴보이고, 사용자는 안보임 --%>
+                <%--         사용법: <sec:authorize access="hasRole('권한명')">html태그</sec:authorize> --%>
+                <%--              => hasRole() : 권한이 있으면 html 태그가 화면에 보임 --%>
+                <sec:authorize access="hasRole('ADMIN')">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Admin</a>
+                    </li>
+                </sec:authorize>
+                <%--                    TODO: 회원 로그인/회원가입 --%>
+                <%--                        사용법: <sec:authorize access="isAnonymous()">html태그</sec:authorize> --%>
+                <%--                            => isAnonymous() : 로그인 안했다면 html 태그가 화면에 보임 --%>
+                <sec:authorize access="isAnonymous()">
+                    <%--                회원가입 #2 : register --%>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/auth/register">회원가입</a>
+                    </li>
+                    <%--                로그인 #3 : Login --%>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/auth/customLogin">Login</a>
+                    </li>
+                </sec:authorize>
+
+                <%--                    TODO: 로그아웃 처리 --%>
+                <%--                        사용법: <sec:authorize access="isAuthenticated()">html태그</sec:authorize> --%>
+                <%--                            => isAuthenticated() : 로그인 했다면 html 태그가 화면에 보임 --%>
+                <sec:authorize access="isAuthenticated()">
+                    <%--                로그아웃 #4 : Logout : form 태그 달기(post 방식) --%>
+                    <li class="nav-item">
+                        <form action="/auth/customLogout" method="post">
+                            <button type="submit" class="btn">Logout</button>
+                                <%--  TODO: csrf 보안 토큰 : 해킹 방지 토큰 --%>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        </form>
+                    </li>
+                </sec:authorize>
             </ul>
         </div>
     </div>

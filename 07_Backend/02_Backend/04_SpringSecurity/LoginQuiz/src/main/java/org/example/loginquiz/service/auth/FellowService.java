@@ -33,9 +33,16 @@ public class FellowService {
         return optionalFellow;
     }
 
-//    기본키로 조회 함수
+    //    기본키로 조회 함수
     public boolean existsById(String userId) {
         boolean result = fellowRepository.existsById(userId);
         return result;
+    }
+
+    //    저장 : save
+    public Fellow save(Fellow fellow) {
+        Fellow fellow2 = fellowRepository.save(fellow);
+
+        return fellow2;
     }
 }

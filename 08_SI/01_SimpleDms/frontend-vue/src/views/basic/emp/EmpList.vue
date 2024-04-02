@@ -1,9 +1,6 @@
-// EmpList.vue
-// 전체 조회 페이지(사원)
-// 1) router/index.js : /emp 메뉴 url 등록
-// 2) services/basic/DeptService.js : 공통 전체조회 함수
-// 3) emp/EmpList.vue : 전체 조회 페이지
-// 4) 벡엔드 : 모델 ~ 컨트롤러 전체 조회 함수
+// EmpList.vue(연습) // 전체 조회 페이지(사원) // 1) router/index.js : /emp 메뉴
+url 등록 // 2) services/basic/DeptService.js : 공통 전체조회 함수 // 3)
+emp/EmpList.vue : 전체 조회 페이지 // 4) 벡엔드 : 모델 ~ 컨트롤러 전체 조회 함수
 <template>
   <div>
     <!-- 검색어 -->
@@ -14,15 +11,15 @@
         <input
           type="text"
           class="form-control"
-          placeholder="사원 검색"
-          v-model="searchDname"
+          placeholder="사원명 검색"
+          v-model="searchEname"
         />
 
         <button class="btn btn-outline-secondary" type="button">Button</button>
       </div>
     </div>
 
-    <!-- 페이징 번호 -->
+    <!-- 페이징 번호(공통) -->
     <div class="row">
       <!-- TODO: 1페이지당 화면에 보일 개수 조정(select태그) -->
       <div class="col-12 w-25 mb-3">
@@ -62,18 +59,29 @@
           <!-- 테이블 제목 -->
           <thead>
             <tr>
+              <th scope="col">eno</th>
+              <th scope="col">ename</th>
+              <th scope="col">job</th>
+              <th scope="col">manager</th>
+              <th scope="col">hiredate</th>
+              <th scope="col">salary</th>
+              <th scope="col">commission</th>
               <th scope="col">dno</th>
-              <th scope="col">dname</th>
-              <th scope="col">loc</th>
               <th scope="col">action</th>
             </tr>
           </thead>
           <!-- TODO: 테이블 본문 (반복문) -->
           <tbody>
             <!-- TODO: 사용법 : v-for="(data,index) in 배열" :key="index" -->
-            <tr v-for="(data, index) in dept"  :key="index">
-              <td>{{ data.dname }}</td>
-              <td>{{ data.loc }}</td>
+            <tr v-for="(data, index) in emp" :key="index">
+              <td>{{ data.eno }}</td>
+              <td>{{ data.ename }}</td>
+              <td>{{ data.job }}</td>
+              <td>{{ data.manager }}</td>
+              <td>{{ data.hiredate }}</td>
+              <td>{{ data.salary }}</td>
+              <td>{{ data.commission }}</td>
+              <td>{{ data.dno }}</td>
               <!-- 수정페이지 링크버튼 -->
               <td>
                 <span class="badge text-bg-success">수정</span>
@@ -85,18 +93,14 @@
     </div>
   </div>
 </template>
-
-// js 작성 부분
 <script>
-// TODO: 공통 crud 함수 import
-import DeptService from "@/services/basic/DeptService";
+import EmpService from "@/services/basic/EmpService";
 
 export default {
-  // TODO: data binding 속성 정의
   data() {
     return {
-      Dept: [], // spring 전송할 변수(속성)
-      searchDname: "", // 사원명검색 변수(속성)(input태그)
+      emp: [], // spring 에서 전송
+      searchEname: "",
 
       // 공통 속성(현재페이지, 전체데이터개수,1페이지당개수)
       page: 1, // 현재페이지번호
@@ -106,7 +110,6 @@ export default {
       pageSizes: [3, 6, 9], //1페이지당개수 배열(select태그-option)
     };
   },
-  // TODO: vue 함수 정의 : 클릭/더블클릭 등
   methods: {
     // 공통 함수 : 페이징 관련 함수들
     // TODO: 페이지번호 변경 클릭시 실행될 함수
@@ -121,35 +124,26 @@ export default {
       this.retrieveDept(); // 3) 재조회 요청
     },
     // TODO: spring(벡엔드) 전체조회 요청함수(핵심)
-    // TODO: 전체조회 함수 : 비동기 함수
-    // TODO: 사용법 : async 함수명() { 변수 = await 함수명2(); console.log(변수) }
-    async retrieveDept() {
+    async retrieveEmp() {
       try {
         // TODO: 1) 공통 전체조회 함수 실행
-        let response = await DeptService.getAll(
-          this.searchDname, // 검색어
+        let response = await EmpService.getAll(
+          this.searchEname, // 검색어
           this.page - 1, // 현재페이지번호-1
           this.pageSize // 1페이지당개수(size)
         );
-        // TODO: 복습 : 2) 객체분할 할당
-        const { dept, totalItems } = response.data; // 부서배열(벡엔드 전송)
-        // TODO: 3) 바인딩변수(속성)에 저장
-        this.dept = dept; // 사원배열(벡엔드 전송)
+        const { emp, totalItems } = response.data; // 사원배열(벡엔드 전송)
+        this.emp = emp;          // 사원배열(벡엔드 전송)
         this.count = totalItems; // 전체페이지수(벡엔드 전송)
-        // TODO: 4) 프론트 로깅 : console.log
         console.log(response.data);
       } catch (e) {
         console.log(e);
       }
     },
   },
-  //   TODO: 화면에 뜰때 자동 실행되는 함수
   mounted() {
-    // TODO: 최초 화면이 뜰때 전체조회 실행
-    this.retrieveDept();
-  },
+    this.retrieveEmp();  // 전체 조회 함수 실행
+  }
 };
 </script>
-
-// css 작성 부분
 <style></style>

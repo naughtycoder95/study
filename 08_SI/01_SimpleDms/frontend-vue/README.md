@@ -31,3 +31,9 @@
     - (1) 화면 디자인 : b-pagination 태그 등 사용
     - (2) vue 바인딩 , 공통페이징함수 제작
           공통전체조회 함수 실행 (비동기 : async ~ await) 
+#  1-10) npm bootstrap@5.2.3 설치 
+    - npm install bootstrap@5.2.3
+    - main.js : 
+        (1) // TODO: bootstrap import
+            import 'bootstrap/dist/js/bootstrap.bundle'
+            import 'bootstrap/dist/css/bootstrap.min.css'

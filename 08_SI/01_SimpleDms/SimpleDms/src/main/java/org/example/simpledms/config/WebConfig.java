@@ -1,6 +1,7 @@
 package org.example.simpledms.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -30,6 +31,13 @@ public class WebConfig implements WebMvcConfigurer {
     //    함수 재정의 : alt + insert
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        WebMvcConfigurer.super.addCorsMappings(registry);
+        registry.addMapping("/**")               // spring 모든 경로(접근)
+                .allowedOrigins("http://localhost:8080")    // vue 의 주소
+                .allowedMethods(                            // 방식 : get/post/put/delete
+                        HttpMethod.GET.name(),
+                        HttpMethod.POST.name(),
+                        HttpMethod.PUT.name(),
+                        HttpMethod.DELETE.name()
+                );
     }
 }

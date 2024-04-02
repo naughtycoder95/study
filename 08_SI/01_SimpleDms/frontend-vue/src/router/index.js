@@ -7,7 +7,12 @@ const routes = [
     path: '/',
     alias: "/dept", // 추가 url1
     component: () => import('../views/basic/dept/DeptList.vue')
-  }
+  },
+  {
+    path: '/',
+    alias: "/emp", // 추가 url1
+    component: () => import('../views/basic/emp/EmpList.vue')
+  },
 ]
 
 const router = createRouter({

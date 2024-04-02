@@ -111,9 +111,7 @@ export default {
       this.retrieveDept(); // 2) 재조회 요청
     },
     // TODO: select 박스 변경시 실행될 함수
-    pageSizeChange(event) {
-      // TODO: js : event.target.value (화면에서 선택 또는 클릭 한 값)
-      this.pageSize = event.target.value; // 1) 화면값을 페이지크기변수에 저장
+    pageSizeChange() {
       this.page = 1; // 2) 현재 페이지번호 초기화(1)
       this.retrieveDept(); // 3) 재조회 요청
     },

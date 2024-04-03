@@ -76,7 +76,7 @@ export default {
     // TODO: 데이터 바인딩 속성 정의
     data() {
         return {
-            dept: null,  // 초기값
+            dept: null,  // 초기값 
             message: "", // 수정성공시 화면 성공메세지 출력하는 변수 
         }
     },
@@ -95,8 +95,16 @@ export default {
                 console.log(e);
             }
         },
-        // TODO: 수정요청 함수
-        updateDept() {},
+        // TODO: 수정요청 함수 : 시점(상세조회가 끝난후 : 부서객체가 있음)
+        async updateDept() {
+          // TODO: 공통 수정함수 : DeptService.update()
+          // TODO: 비동기 코딩 : async ~ await
+          let response = await DeptService.update(this.dept.dno, this.dept);
+          // 로깅 
+          console.log(response.data);
+          // 화면에 성공메세지 출력 : message
+          this.message = "수정이 성공했습니다.";
+        },
         // TODO: 삭제요청 함수
         deleteDept() {}
     },

@@ -1,6 +1,7 @@
 package org.example.simpledms.controller.basic;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.simpledms.model.entity.basic.Dept;
 import org.example.simpledms.model.entity.basic.Emp;
 import org.example.simpledms.service.basic.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +83,7 @@ public class EmpController {
     @PostMapping("/emp")
     public ResponseEntity<Object> create(
             @RequestBody Emp emp
-    ){
+    ) {
         try {
             Emp emp2 = empService.save(emp);
 
@@ -92,16 +93,22 @@ public class EmpController {
         }
     }
 
+    //    상세조회 함수
     @GetMapping("/emp/{eno}")
     public ResponseEntity<Object> findById(
             @PathVariable int eno
     ) {
         try {
+//            DB 상세조회 서비스 함수 실행
             Optional<Emp> optionalEmp = empService.findById(eno);
+
             if (optionalEmp.isEmpty() == true) {
+//                데이터 없음(203)
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
-                return new ResponseEntity<>(optionalEmp.get(), HttpStatus.OK);
+//                데이터 있음(200)
+                return new ResponseEntity<>(optionalEmp.get()
+                        , HttpStatus.OK);
             }
 
         } catch (Exception e) {

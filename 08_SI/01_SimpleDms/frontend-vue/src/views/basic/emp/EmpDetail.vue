@@ -193,9 +193,9 @@ export default {
             }
         },
         // TODO: 수정요청 함수
-        updateDept() {},
+        updateEmp() {},
         // TODO: 삭제요청 함수
-        deleteDept() {}
+        deleteEmp() {}
     },
     // TODO: 화면에 뜰때 자동 실행되는 함수
     mounted() {

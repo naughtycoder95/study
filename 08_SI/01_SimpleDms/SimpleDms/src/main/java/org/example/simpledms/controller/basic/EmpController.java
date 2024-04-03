@@ -1,7 +1,6 @@
 package org.example.simpledms.controller.basic;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.simpledms.model.entity.basic.Dept;
 import org.example.simpledms.model.entity.basic.Emp;
 import org.example.simpledms.service.basic.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * packageName : org.example.simpledms.controller
@@ -92,4 +92,20 @@ public class EmpController {
         }
     }
 
+    @GetMapping("/emp/{eno}")
+    public ResponseEntity<Object> findById(
+            @PathVariable int eno
+    ) {
+        try {
+            Optional<Emp> optionalEmp = empService.findById(eno);
+            if (optionalEmp.isEmpty() == true) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            } else {
+                return new ResponseEntity<>(optionalEmp.get(), HttpStatus.OK);
+            }
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

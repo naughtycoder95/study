@@ -13,6 +13,12 @@ const routes = [
     path: "/add-dept",
     component: () => import("../views/basic/dept/AddDept.vue"),
   },
+  // 수정 페이지(상세조회 : dno(부서번호))
+  {
+    // TODO: 사용법 - path: "/dept/:변수명"
+    path: "/dept/:dno",
+    component: () => import("../views/basic/dept/DeptDetail.vue"),
+  },
   // 사원
   {
     path: "/emp",
@@ -23,6 +29,11 @@ const routes = [
     path: "/add-emp",
     component: () => import("../views/basic/emp/AddEmp.vue"),
   },
+  // 수정 페이지(상세조회 : eno(사원번호))
+  {
+    path: "/emp/:eno",
+    component: () => import("../views/basic/emp/EmpDetail.vue"),
+  }
 ];
 
 const router = createRouter({

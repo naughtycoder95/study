@@ -95,7 +95,9 @@ emp/EmpList.vue : 전체 조회 페이지 // 4) 벡엔드 : 모델 ~ 컨트롤�
               <td>{{ data.dno }}</td>
               <!-- 수정페이지 링크버튼 -->
               <td>
-                <span class="badge text-bg-success">수정</span>
+                <router-link :to="'/emp/' + data.eno">
+                  <span class="badge text-bg-success">수정</span>
+                </router-link>
               </td>
             </tr>
           </tbody>

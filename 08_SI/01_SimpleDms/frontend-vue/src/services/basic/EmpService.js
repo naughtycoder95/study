@@ -10,6 +10,10 @@ class EmpService {
     create(data) {
         return http.post("/basic/emp", data);
     }
+
+    get(eno) {
+        return http.get(`/basic/emp/${eno}`);
+    }
 }
 
 export default new EmpService();

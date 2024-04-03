@@ -11,27 +11,24 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * packageName : org.example.jpaexam.service.basic
+ * packageName : org.example.simpledms.service.basic
  * fileName : DeptService
  * author : GGG
- * date : 2024-03-19
- * description : CRUD DB 함수를 실행하는 서비스 함수 정의
+ * date : 2024-04-02
+ * description :
  * 요약 :
- *      목적 : MVC 디자인 패턴에 의해 역할에 따라 자바 클래스를 정의함
- *      @Service, @Repository, 등 : IOC, 스프링 서버가 실행될때
- *          클래스를 생성해줌
  * <p>
  * ===========================================================
  * DATE            AUTHOR             NOTE
  * -----------------------------------------------------------
- * 2024-03-19         GGG          최초 생성
+ * 2024-04-02         GGG          최초 생성
  */
 @Service
 public class DeptService {
 
-//    DB CRUD 클래스 받기 : JPA 제공 함수 사용 가능
+    //    DB CRUD 클래스 받기 : JPA 제공 함수 사용 가능
     @Autowired
-    DeptRepository deptRepository;
+    DeptRepository deptRepository; // DI
 
     /**
      * 전체 조회 : 페이징 없음
@@ -54,7 +51,7 @@ public class DeptService {
 //      DB like 검색 함수 실행 : 페이징 처리
         Page<Dept> page
                 = deptRepository
-                        .findAllByDnameContaining(dname, pageable);
+                .findAllByDnameContaining(dname, pageable);
         return page;
     }
 
@@ -71,7 +68,7 @@ public class DeptService {
         return optionalDept;
     }
 
-//    저장/수정 : 1) 기본키가(부서번호) 없으면 저장(insert)
+    //    저장/수정 : 1) 기본키가(부서번호) 없으면 저장(insert)
 //               2) 기본키가(부서번호) 있으면 수정(update)
 //           => JPA 내부적으로 if문 있음 : 알아서 실행됨
     public Dept save(Dept dept) {
@@ -81,7 +78,7 @@ public class DeptService {
         return dept2;
     }
 
-//    삭제 함수
+    //    삭제 함수
     public boolean removeById(int dno) {
 //        JPA 삭제함수 : deleteById(기본키)
 //        1) 먼저 기본키가 테이블에 있으면 삭제, true 리턴
@@ -97,3 +94,4 @@ public class DeptService {
         }
     }
 }
+

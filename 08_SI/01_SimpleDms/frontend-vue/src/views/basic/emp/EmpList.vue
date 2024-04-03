@@ -1,6 +1,8 @@
 // EmpList.vue(연습) // 전체 조회 페이지(사원) // 1) router/index.js : /emp 메뉴
 url 등록 // 2) services/basic/DeptService.js : 공통 전체조회 함수 // 3)
 emp/EmpList.vue : 전체 조회 페이지 // 4) 벡엔드 : 모델 ~ 컨트롤러 전체 조회 함수
+
+// 연습 2) 페이지번호 함수, 페이지크기변경함수, 검색함수 html 연결하기
 <template>
   <div>
     <!-- 검색어 -->
@@ -15,7 +17,12 @@ emp/EmpList.vue : 전체 조회 페이지 // 4) 벡엔드 : 모델 ~ 컨트롤�
           v-model="searchEname"
         />
 
-        <button class="btn btn-outline-secondary" type="button">Button</button>
+        <button class="btn btn-outline-secondary" 
+              type="button"
+              @click="retrieveEmp"
+        >
+          검색
+        </button>
       </div>
     </div>
 
@@ -25,7 +32,10 @@ emp/EmpList.vue : 전체 조회 페이지 // 4) 벡엔드 : 모델 ~ 컨트롤�
       <div class="col-12 w-25 mb-3">
         1페이지당 개수 :
         <!-- 복습 : select 태그 -> v-model="pageSize" : 화면에 보일 초기값이 지정 -->
-        <select class="form-select form-select-sm" v-model="pageSize">
+        <select class="form-select form-select-sm" 
+              v-model="pageSize"
+              @change="pageSizeChange"
+        >
           <!-- TODO: vue 반복문 실행 -->
           <option v-for="(data, index) in pageSizes" :key="index" :value="data">
             {{ data }}
@@ -48,6 +58,7 @@ emp/EmpList.vue : 전체 조회 페이지 // 4) 벡엔드 : 모델 ~ 컨트롤�
         v-model="page"
         :total-rows="count"
         :per-page="pageSize"
+        @click="retrieveEmp"
       ></b-pagination>
     </div>
 
@@ -116,12 +127,12 @@ export default {
     pageNoChange(value) {
       // this.속성 => data() 안에 속성들 접근
       this.page = value; // 1) 현재페이지 변경
-      this.retrieveDept(); // 2) 재조회 요청
+      this.retrieveEmp(); // 2) 재조회 요청
     },
     // TODO: select 박스 변경시 실행될 함수
     pageSizeChange() {
       this.page = 1; // 2) 현재 페이지번호 초기화(1)
-      this.retrieveDept(); // 3) 재조회 요청
+      this.retrieveEmp(); // 3) 재조회 요청
     },
     // TODO: spring(벡엔드) 전체조회 요청함수(핵심)
     async retrieveEmp() {

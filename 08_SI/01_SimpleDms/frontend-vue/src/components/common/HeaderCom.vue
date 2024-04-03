@@ -2,7 +2,7 @@
 <template>
   <div>
     <!-- 부트스트랩 메뉴 넣기 -->
-    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg  bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Simple</a>
         <!-- 단축메뉴(햄버거 메뉴) -->

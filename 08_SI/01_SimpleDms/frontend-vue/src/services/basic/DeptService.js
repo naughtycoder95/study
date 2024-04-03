@@ -12,7 +12,12 @@ class DeptService {
             // => http://localhost:8000/api + /basic/dept?dname=SALES&page=0&size=3
             // => http://localhost:8000/api/basic/dept?dname=SALES&page=0&size=3
         return http.get(`/basic/dept?dname=${dname}&page=${page}&size=${size}`);
-    }   
+    }
+    // TODO: 추가(insert) 함수 -> post 방식 -> @PostMapping
+    create(data) {
+        // TODO: 사용법 : http.post("컨트롤러함수url", 생성할객체)
+        return http.post("/basic/dept", data);
+    }
 }
 
 // 내보내기 : 다른 js 에서 사용하기 위해

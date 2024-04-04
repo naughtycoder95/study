@@ -87,10 +87,11 @@ export default {
   methods: {
     // TODO: 파일 선택상자에서 이미지 선택하면 변수에 저장하는 함수
     selectImage() {
-      // 1) 파일 선택상자에서 1st 로 선택한 이미지를 변수에 저장
+      // 1) 파일선택상자에서 1st 로 선택한 이미지를 변수에 저장
       // ref="file" 접근 -> 내부 속성 : files[번호]
       // TODO: 사용법 : this.$refs.변수명 => input type="file" ref="변수명" 태그 접근
       this.currentImage = this.$refs.file.files[0];
+      // 성공메세지 변수 초기화
       this.message = "";
     },
     // TODO: insert(추가:파일업로드) 함수
@@ -106,7 +107,7 @@ export default {
         console.log(response);
         // 화면에 성공메세지 출력
         this.message = response.data;
-      } catch(e) {
+      } catch (e) {
         // 현재 선택된 이미지 변수 초기화
         this.currentImage = undefined;
         this.message = "";

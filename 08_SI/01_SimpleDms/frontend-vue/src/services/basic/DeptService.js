@@ -32,6 +32,13 @@ class DeptService {
         return http.put(`/basic/dept/${dno}`, data);
     }
 
+    // TODO: 삭제함수 : 부서번호(dno)
+    // TODO: 삭제(delete) -> delete 방식 -> @DeleteMapping
+    // TODO: 사용법 : http.delete(`/컨트롤러함수url/${dno}`)
+    delete(dno) {
+        return http.delete(`/basic/dept/deletion/${dno}`);
+    }
+
 }
 
 // 내보내기 : 다른 js 에서 사용하기 위해

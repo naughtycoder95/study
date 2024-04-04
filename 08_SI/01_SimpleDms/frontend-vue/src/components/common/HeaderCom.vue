@@ -2,7 +2,7 @@
 <template>
   <div>
     <!-- 부트스트랩 메뉴 넣기 -->
-    <nav class="navbar navbar-expand-lg  bg-light">
+    <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Simple</a>
         <!-- 단축메뉴(햄버거 메뉴) -->
@@ -25,7 +25,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <!-- 드롭다운 메뉴 -->
+            <!-- 기초예제 메뉴 #1 -->
             <li class="nav-item dropdown">
               <!-- 대메뉴 -->
               <a
@@ -47,6 +47,31 @@
                 </li>
                 <li>
                   <a class="dropdown-item" href="/add-emp">Add Emp(연습)</a>
+                </li>
+              </ul>
+            </li>
+            <!-- 고급예제 메뉴 #2 -->
+            <li class="nav-item dropdown">
+              <!-- 대메뉴 -->
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                고급 예제
+              </a>
+              <!-- 소메뉴 -->
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/fileDb">FileDb</a></li>
+                <li><a class="dropdown-item" href="/add-fileDb">Add FileDb</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="/gallery">Gallery(연습)</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/add-gallery">Add Gallery(연습)</a>
                 </li>
               </ul>
             </li>

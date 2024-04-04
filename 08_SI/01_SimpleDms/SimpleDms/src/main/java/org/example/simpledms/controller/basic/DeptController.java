@@ -51,21 +51,21 @@ public class DeptController {
     @Autowired
     DeptService deptService; // DI
 
-    //    TODO: 전체 조회 함수 + 검색 + 페이징
+//    TODO: 전체 조회 함수 + 검색 + 페이징
     @GetMapping("/dept")
     public ResponseEntity<Object> findAll(
             @RequestParam(defaultValue = "") String dname,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "3") int size
     ) {
-        try {
+        try{
 //            매개변수(page, size) 페이징 변수에 저장
 //             page : 현재페이지번호, size : 1페이지당개수
             Pageable pageable = PageRequest.of(page, size);
 
 //            전체 조회 서비스 함수 실행
             Page<Dept> pageList
-                    = deptService.findAllByDnameContaining(dname, pageable);
+                    = deptService.findAllByDnameContaining(dname,pageable);
 
 //            vue 로 json 데이터를 전송 : jsp (model == Map(키,값))
             Map<String, Object> response = new HashMap<>();
@@ -76,7 +76,7 @@ public class DeptController {
 
 //            TODO: 1) pageList 값이 없으면 : DB 테이블 없음 => NO_CONTENT(203)
 //                  2) pageList 값이 있으면 : 성공 => OK(200)
-            if (pageList.isEmpty() == true) {
+            if(pageList.isEmpty() == true) {
 //                1) pageList 값이 없으면 : DB 테이블 없음 => NO_CONTENT(203)
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
@@ -90,7 +90,7 @@ public class DeptController {
         }
     }
 
-    //    TODO: 저장 함수
+//    TODO: 저장 함수
     @PostMapping("/dept")
     public ResponseEntity<Object> create(
             @RequestBody Dept dept
@@ -108,7 +108,7 @@ public class DeptController {
         }
     }
 
-    //    TODO: 상세 조회 함수
+//    TODO: 상세 조회 함수
     @GetMapping("/dept/{dno}")
     public ResponseEntity<Object> findById(
             @PathVariable int dno
@@ -117,16 +117,57 @@ public class DeptController {
 //            DB 상세조회 서비스 함수 실행
             Optional<Dept> optionalDept = deptService.findById(dno);
 
-            if (optionalDept.isEmpty() == true) {
+            if(optionalDept.isEmpty() == true) {
 //                데이터 없음(203)
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
 //                데이터 있음(200)
                 return new ResponseEntity<>(optionalDept.get()
-                        , HttpStatus.OK);
+                                                , HttpStatus.OK);
             }
 
         } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+//    TODO: 수정 함수 : 수정 페이지 열기 함수       (x) : vue 제작
+//    TODO: 수정 함수 : 수정 버튼 클릭시 실행될 함수
+//       수정(update) -> put 방식 -> @PutMapping
+    @PutMapping("/dept/{dno}")
+    public ResponseEntity<Object> update(
+            @PathVariable int dno,
+            @RequestBody Dept dept
+    ) {
+        try {
+            Dept dept2 = deptService.save(dept);  // 수정
+
+            return new ResponseEntity<>(dept2, HttpStatus.OK);
+        } catch (Exception e) {
+//            DB 에러 (서버 에러) -> 500 신호(INTERNAL_SERVER_ERROR)
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+//    TODO: 삭제 함수
+//     삭제(delete) -> delete 방식 -> @DeleteMapping
+    @DeleteMapping("/dept/deletion/{dno}")
+    public ResponseEntity<Object> delete(
+            @PathVariable int dno
+    ) {
+        try {
+//            DB 서비스 삭제 함수 실행
+            boolean success = deptService.removeById(dno);
+
+            if(success == true) {
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                // 삭제 실행 : 0건 삭제(삭제할 데이터 없음)
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+        } catch (Exception e) {
+//            서버(DB) 에러
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

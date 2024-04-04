@@ -115,4 +115,44 @@ public class EmpController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    //    수정함수 : 수정 버튼 클릭시 실행될 함수
+//    수정(update) -> put 방식 -> @PutMapping
+    @PutMapping("/emp/{eno}")
+    public ResponseEntity<Object> update(
+            @PathVariable int eno,
+            @RequestBody Emp emp
+    ) {
+        try {
+            Emp emp2 = empService.save(emp);
+
+            return new ResponseEntity<>(emp2, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //    삭제 함수
+    @DeleteMapping("/emp/deletion/{eno}")
+    public ResponseEntity<Object> delete(
+            @PathVariable int eno
+    ) {
+        try {
+//            DB 서비스 삭제 함수 실행
+            boolean success = empService.removeById(eno);
+
+            if (success == true) {
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                // 삭제 실행 : 0건 삭제(삭제할 데이터 없음)
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+        } catch (Exception e) {
+//            서버(DB) 에러
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }

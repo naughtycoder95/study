@@ -33,7 +33,12 @@ const routes = [
   {
     path: "/emp/:eno",
     component: () => import("../views/basic/emp/EmpDetail.vue"),
-  }
+  },  
+  // FileDb
+  {
+    path: "/fileDb",
+    component: () => import("../views/advanced/fileDb/FileDbList.vue"),
+  },
 ];
 
 const router = createRouter({

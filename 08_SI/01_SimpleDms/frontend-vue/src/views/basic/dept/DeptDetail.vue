@@ -109,7 +109,16 @@ export default {
       }
     },
     // TODO: 삭제요청 함수
-    deleteDept() {},
+    // TODO: 비동기 코딩 : async ~ await
+    async deleteDept() {
+      // TODO: 공통 삭제함수 : DeptService.delete(dno)
+      let response = await DeptService.delete(this.dept.dno);
+      // 로깅
+      console.log(response.data);
+      // TODO: 전체조회 페이지로 강제 이동
+      // TODO: this.$router.push("이동할url")
+      this.$router.push("/dept");
+    },
   },
   // TODO: 화면에 뜰때 자동 실행되는 함수
   mounted() {

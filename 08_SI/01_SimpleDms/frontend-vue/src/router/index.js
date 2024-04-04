@@ -33,11 +33,21 @@ const routes = [
   {
     path: "/emp/:eno",
     component: () => import("../views/basic/emp/EmpDetail.vue"),
-  },  
+  },
   // FileDb
   {
     path: "/fileDb",
     component: () => import("../views/advanced/fileDb/FileDbList.vue"),
+  },
+  // add-fileDb
+  {
+    path: "/add-fileDb",
+    component: () => import("../views/advanced/fileDb/AddFileDb.vue"),
+  },
+  // gallery
+  {
+    path: "/gallery",
+    component: () => import("../views/advanced/gallery/GalleryList.vue"),
   },
 ];
 

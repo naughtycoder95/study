@@ -110,13 +110,13 @@ export default {
         // TODO: 공통 전체 조회 함수 : getAll()
         // TODO: 비동기 코딩 : async ~ await
         let response = await FileDbService.getAll(
-          this.searchTitle,              // 제목 검색어
-          this.page - 1,                 // 현재페이지번호
-          this.pageSize                  // 1페이지당 개수 
+          this.searchTitle, // 제목 검색어
+          this.page - 1, // 현재페이지번호
+          this.pageSize // 1페이지당 개수
         );
         const { fileDb, totalItems } = response.data;
-        this.fileDb = fileDb;             // 파일 배열
-        this.count = totalItems;          // 전체 데이터 개수
+        this.fileDb = fileDb; // 파일 배열
+        this.count = totalItems; // 전체 데이터 개수
         // 로깅
         console.log(response.data);
       } catch (e) {
@@ -124,7 +124,19 @@ export default {
       }
     },
     // TODO: 삭제 함수
-    deleteFileDb() {},
+    async deleteFileDb(uuid) {
+      try {
+        // TODO: 공통 삭제 함수 실행 : delete()
+        // TODO: 비동기 코딩 : async ~ await
+        let response = await FileDbService.delete(uuid);
+        // 로깅
+        console.log(response.data);
+        // 전체조회 페이지 -> 삭제 후 재조회
+        this.retrieveFileDb();
+      } catch (e) {
+        console.log(e);
+      }
+    },
     // TODO: 공통함수(페이징)
     // TODO: select 박스 변경시 실행될 함수
     // TODO: select 태그 연결

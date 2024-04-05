@@ -1,7 +1,6 @@
-// GalleryList.vue
-// vueInit
-// 연습) FileDbList 를 참고해서
-//     전체조회 프론트/벡엔드 를 완성하세요
+// GalleryList.vue // vueInit // 연습) FileDbList 를 참고해서 // 전체조회
+프론트/벡엔드 를 완성하세요 // 연습 3) FileDbList 를 참고해서 // 삭제 기능을
+프론트/벡엔드 를 완성하세요
 <template>
   <div>
     <div class="col-md-8">
@@ -111,7 +110,7 @@ export default {
         let response = await GalleryService.getAll(
           this.searchTitle,              // 제목 검색어
           this.page - 1,                 // 현재페이지번호
-          this.pageSize                  // 1페이지당 개수 
+          this.pageSize                  // 1페이지당 개수
         );
         const { gallery, totalItems } = response.data;
         this.gallery = gallery;           // gallery 배열
@@ -122,7 +121,16 @@ export default {
         console.log(e);
       }
     },
-    deleteGallery() {},
+    async deleteGallery(uuid) {
+      try {
+        // TODO: 공통 삭제 함수 실행 : delete()
+        let response = await GalleryService.delete(uuid);
+        console.log(response.data);
+        this.retrieveGallery();
+      } catch (e) {
+        console.log(e);
+      }
+    },
     // TODO: 공통함수(페이징)
     // TODO: select 박스 변경시 실행될 함수
     // TODO: select 태그 연결
@@ -136,6 +144,4 @@ export default {
   },
 }
 </script>
-<style>
-    
-</style>
+<style></style>

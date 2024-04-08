@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SImpleDmsApplication {
+public class SimpleDmsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SImpleDmsApplication.class, args);
+        SpringApplication.run(SimpleDmsApplication.class, args);
     }
 
 }

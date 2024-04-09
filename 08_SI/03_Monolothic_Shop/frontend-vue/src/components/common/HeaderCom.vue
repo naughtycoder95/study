@@ -1,4 +1,5 @@
-// HeaderCom.vue // vueInit
+// HeaderCom.vue
+// vueInit
 <template>
   <div>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -40,14 +41,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="/simple-product">
-                    Simple Shop
-                  </a>
+                  <a class="dropdown-item" href="/simple-product"> Simple Shop </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/add-simple-product">
-                    Add Simple Shop
-                  </a>
+                  <a class="dropdown-item" href="/add-simple-product"> Add Simple Shop </a>
                 </li>
                 <li>
                   <hr class="dropdown-divider" />
@@ -123,6 +120,10 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+    
+}
 </script>
-<style></style>
+<style>
+    
+</style>

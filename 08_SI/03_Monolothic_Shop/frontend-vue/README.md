@@ -1,12 +1,12 @@
 # 1) 부트스트랩 cdn 넣기 : index.html
 
-# 2) npm bootstrap@5.2.3 설치 
+# 2) bootstrap@5.2.3 npm 추가 설치
     - npm install bootstrap@5.2.3
     - main.js : 
         (1) // TODO: bootstrap import
             import 'bootstrap/dist/js/bootstrap.bundle'
             import 'bootstrap/dist/css/bootstrap.min.css'
-# 3) axios 라이브러리 설치 : 필수
+# 3)  axios 라이브러리 설치 : 필수
      - npm install axios
      - 설치확인 : package.json(vs build.gradle) 의 dependencies 부분
         (vue 의 라이브러리 설치 목록)
@@ -14,8 +14,10 @@
     - npm install bootstrap-vue-3
     - 설치확인 : package.json(vs build.gradle) 의 dependencies 부분
         (vue 의 라이브러리 설치 목록)
-            - main.js :
-        // TODO: bootstartp vue3 import
-        import BootstrapVue3 from 'bootstrap-vue-3'
-        // TODO: bootstartp vue3 css import
-        import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
+    - main.js :
+    // TODO: bootstartp vue3 import
+    import BootstrapVue3 from 'bootstrap-vue-3'
+    // TODO: bootstartp vue3 css import
+    import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
+    // TODO: bootstartp vue3 lib 뷰에 넣기
+            .use(BootstrapVue3)

@@ -5,6 +5,7 @@
 
     <!-- 본문 -->
     <div class="container">
+      <!-- router url + 페이지 등록 : 그 곳을 찾아 보여주는 태그 -->
       <router-view />
     </div>
   </div>
@@ -19,6 +20,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import "@/assets/css/app.css";
 </style>

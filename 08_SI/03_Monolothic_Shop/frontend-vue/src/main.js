@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-// TODO: bootstrap import
+// TODO: bootstrap import : vue 2.x -> vue 3.x (드룹다운 안됨)
 import "bootstrap/dist/js/bootstrap.bundle";
 import "bootstrap/dist/css/bootstrap.min.css";
 

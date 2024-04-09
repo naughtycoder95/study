@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
  * packageName : org.example.simpledms.service.shop.simpleproduct
  * fileName : SimpleProductService
@@ -37,5 +39,13 @@ public class SimpleProductService {
                 pageable
         );
         return page;
+    }
+
+//    TODO: 상세조회
+    public Optional<SimpleProduct> findById(int spno) {
+//        DB 상세조회 실행
+        Optional<SimpleProduct> optionalSimpleProduct
+                = simpleProductRepository.findById(spno);
+        return optionalSimpleProduct;
     }
 }

@@ -9,13 +9,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * packageName : org.example.simpledms.controller.shop.simpleproduct
@@ -38,7 +36,7 @@ public class SimpleProductController {
     @Autowired
     SimpleProductService simpleProductService; // DI
 
-//    TODO: 전체조회 함수
+    //    TODO: 전체조회 함수
 //    조회(select) -> get 방식 -> @GetMapping
     @GetMapping("/simple-product")
     public ResponseEntity<Object> findAll(
@@ -70,6 +68,30 @@ public class SimpleProductController {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
 
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //    TODO: 상세조회 함수
+//    조회(select) -> get 방식 -> @GetMapping
+    @GetMapping("/simple-product/{spno}")
+    public ResponseEntity<Object> findById(
+            @PathVariable int spno
+    ) {
+        try {
+//            상세조회 서비스 실행
+            Optional<SimpleProduct> optionalSimpleProduct
+                    = simpleProductService.findById(spno);
+
+            if(optionalSimpleProduct.isEmpty() == true) {
+//                데이터 없음
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            } else {
+//                조회 성공
+                return new ResponseEntity<>(optionalSimpleProduct.get(), HttpStatus.OK);
+
+            }
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

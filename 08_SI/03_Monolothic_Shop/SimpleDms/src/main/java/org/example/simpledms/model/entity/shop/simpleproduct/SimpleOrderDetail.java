@@ -2,8 +2,10 @@ package org.example.simpledms.model.entity.shop.simpleproduct;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.example.simpledms.model.common.SonoSpnoPk;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -30,6 +32,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @AllArgsConstructor
 @DynamicInsert
 @DynamicUpdate
+@IdClass(SonoSpnoPk.class)
 public class SimpleOrderDetail {
 //    속성
     @Id

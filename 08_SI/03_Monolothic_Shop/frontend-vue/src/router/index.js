@@ -1,25 +1,35 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    component: () => import('../views/HomeView.vue')
+    path: "/",
+    component: () => import("../views/HomeView.vue"),
   },
   // /simple-product : 전체조회 #1
   {
-    path: '/simple-product',
-    component: () => import('../views/simple-product/SimpleProductList.vue')
+    path: "/simple-product",
+    component: () => import("../views/simple-product/SimpleProductList.vue"),
   },
   // /simple-cart : 장바구니 상세화면 #2
   {
-    path: '/simple-cart/:spno',
-    component: () => import('../views/simple-product/SimpleCartDetail.vue')
+    path: "/simple-cart/:spno",
+    component: () => import("../views/simple-product/SimpleCartDetail.vue"),
   },
-]
+  // /simple-cart : 장바구니 전체페이지 #3(장바구니 가기 버튼)
+  {
+    path: "/simple-cart",
+    component: () => import("../views/simple-product/SimpleCartList.vue"),
+  },
+  // /simple-order : 주문 전체페이지 #4(주문 가기 버튼)
+  {
+    path: "/simple-order",
+    component: () => import("../views/simple-product/SimpleOrderList.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

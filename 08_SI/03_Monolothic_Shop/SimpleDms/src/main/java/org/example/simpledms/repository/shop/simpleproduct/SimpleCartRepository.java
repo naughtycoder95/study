@@ -24,7 +24,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface SimpleCartRepository extends JpaRepository<SimpleCart, Integer> {
-    //    TODO: 장바구니 전체조회(조인) + like 검색 + DELETE_YN = 'N' 추가
+//    TODO: 장바구니 전체조회(조인) + like 검색 + DELETE_YN = 'N' 추가
     @Query(value = "SELECT SC.SCNO         AS scno\n" +
             "      , SP.SPNO        AS spno\n" +
             "      , SP.CODE_ID     AS codeId\n" +

@@ -54,6 +54,7 @@
         <div class="row g-0 p-3">
           <div class="col-md-4 p-3 border">
             <img
+              :src="data.imgPath"
               class="img-fluid rounded-start"
               alt="..."
               style="{ height: 15 + 'vh', width: 5 + 'vw' }"

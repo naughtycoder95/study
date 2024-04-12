@@ -37,12 +37,12 @@ public class SimpleCartController {
     @Autowired
     SimpleCartService simpleCartService; // DI
 
-    //    TODO: 저장함수
+//    TODO: 저장함수
 //    저장(insert) -> post 방식 -> @PostMapping
     @PostMapping("/simple-cart")
     public ResponseEntity<Object> create(
             @RequestBody SimpleCart simpleCart
-    ) {
+            ) {
         try {
 //            저장 서비스 실행
             SimpleCart simpleCart2 = simpleCartService.save(simpleCart);
@@ -90,7 +90,7 @@ public class SimpleCartController {
         }
     }
 
-    //    TODO: 삭제 함수
+//    TODO: 삭제 함수
     @DeleteMapping("/simple-cart/deletion/{scno}")
     public ResponseEntity<Object> delete(
             @PathVariable int scno

@@ -48,7 +48,7 @@ public class SimpleCartService {
         return page;
     }
 
-    //    TODO: 삭제 함수
+//    TODO: 삭제 함수
     public boolean removeById(int scno) {
         if(simpleCartRepository.existsById(scno)) {
             simpleCartRepository.deleteById(scno); // DB 삭제

@@ -4,11 +4,14 @@ import jakarta.transaction.Transactional;
 import org.example.simpledms.model.dto.shop.simpleproduct.SimpleOrderDto;
 import org.example.simpledms.model.entity.shop.simpleproduct.SimpleOrder;
 import org.example.simpledms.model.entity.shop.simpleproduct.SimpleOrderDetail;
+import org.example.simpledms.model.entity.shop.simpleproduct.SimpleProduct;
 import org.example.simpledms.repository.shop.simpleproduct.SimpleOrderDetailRepository;
 import org.example.simpledms.repository.shop.simpleproduct.SimpleOrderRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 /**
  * packageName : org.example.simpledms.service.shop.simpleproduct
@@ -38,7 +41,7 @@ public class SimpleOrderService {
     //    DTO 변환 패키지
     ModelMapper modelMapper = new ModelMapper();
 
-    //    TODO: 저장함수 : 주문 테이블 insert + 주문상세(배열) insert(반복문)
+    //    TODO: 주문 저장함수 : 주문 테이블 insert + 주문상세(배열) insert(반복문)
 //      => 주문 객체 DTO 정의 : (주문상세 객체배열(List), 주문상태 등)
     @Transactional
     public SimpleOrder insert(SimpleOrderDto simpleOrderDto) {
@@ -56,7 +59,7 @@ public class SimpleOrderService {
                 = simpleOrderRepository.save(simpleOrder); // 부모 테이블 저장
 
 //        TODO: 3) 자식테이블도 저장 : 주문상세 테이블 (반복문)
-//          DB 트랜잭션(transaction, 거래) :
+//          DB 트랜잭션(transaction, 거래) : 
 //              1) CUD 작업에 대해 여러개가 있을경우 중간에 에러가 발생하면 모두 롤백함
 //              2) 위의 있는 기능을 사용하려면 : @Transactional 함수위에 붙임
         for (int i = 0; i < simpleOrderDto.getSimpleOrderDetailList().size(); i++) {
@@ -68,5 +71,19 @@ public class SimpleOrderService {
             simpleOrderDetailRepository.save(tmpSimpleOrderDetail);
         }
         return simpleOrder2;  // 저장된 주문 객체
+    }
+
+    //    TODO: 주문 상세조회
+    public Optional<SimpleOrder> findById(int sono) {
+//        DB 상세조회 실행
+        Optional<SimpleOrder> optionalSimpleOrder
+                = simpleOrderRepository.findById(sono);
+        return optionalSimpleOrder;
+    }
+
+//    TODO: 주문 update : 카프카 소비자에서 사용
+    public void update(SimpleOrder simpleOrder) {
+//        DB 수정
+        simpleOrderRepository.save(simpleOrder);
     }
 }

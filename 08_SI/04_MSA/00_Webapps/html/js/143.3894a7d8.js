@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfrontend_vue"]=self["webpackChunkfrontend_vue"]||[]).push([[143],{9524:function(n,e,u){u.r(e),u.d(e,{default:function(){return d}});var r=u(6768);function t(n,e,u,t,f,c){return(0,r.uX)(),(0,r.CE)("div",null," 안녕하세요 쇼핑몰 예제입니다. ")}var f={},c=u(1241);const a=(0,c.A)(f,[["render",t]]);var d=a}}]);
+//# sourceMappingURL=143.3894a7d8.js.map

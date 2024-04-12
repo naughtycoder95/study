@@ -36,7 +36,7 @@ public class SimpleProductController {
     @Autowired
     SimpleProductService simpleProductService; // DI
 
-    //    TODO: 전체조회 함수
+//    TODO: 전체조회 함수
 //    조회(select) -> get 방식 -> @GetMapping
     @GetMapping("/simple-product")
     public ResponseEntity<Object> findAll(
@@ -73,7 +73,7 @@ public class SimpleProductController {
         }
     }
 
-    //    TODO: 상세조회 함수
+//    TODO: 상세조회 함수
 //    조회(select) -> get 방식 -> @GetMapping
     @GetMapping("/simple-product/{spno}")
     public ResponseEntity<Object> findById(
@@ -98,3 +98,11 @@ public class SimpleProductController {
     }
 
 }
+
+
+
+
+
+
+
+

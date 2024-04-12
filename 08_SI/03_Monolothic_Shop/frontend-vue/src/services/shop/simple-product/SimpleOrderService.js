@@ -7,6 +7,10 @@ class SimpleOrderService {
     create(data) {
         return http.post("/shop/simple-order", data);
     }
+    // TODO: 주문 상세조회
+    get(sono) {
+        return http.get(`/shop/simple-order/${sono}`);
+    }
 }
 
 export default new SimpleOrderService();

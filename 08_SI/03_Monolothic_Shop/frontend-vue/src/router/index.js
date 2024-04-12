@@ -25,6 +25,11 @@ const routes = [
     path: "/simple-order",
     component: () => import("../views/simple-product/SimpleOrderList.vue"),
   },
+  // /simple-approval/:sono : 결재 페이지 #5(결재 버튼 클릭)
+  {
+    path: "/simple-approval/:sono",
+    component: () => import("../views/simple-product/SimpleApprovalList.vue"),
+  },
 ];
 
 const router = createRouter({

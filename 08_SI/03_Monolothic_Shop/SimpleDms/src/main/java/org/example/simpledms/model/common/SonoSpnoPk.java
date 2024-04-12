@@ -1,6 +1,8 @@
 package org.example.simpledms.model.common;
 
 import lombok.*;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.io.Serializable;
 
 /**

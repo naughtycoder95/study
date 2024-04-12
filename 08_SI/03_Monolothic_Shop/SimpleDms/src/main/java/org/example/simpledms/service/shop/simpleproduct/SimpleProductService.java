@@ -45,7 +45,7 @@ public class SimpleProductService {
     public Optional<SimpleProduct> findById(int spno) {
 //        DB 상세조회 실행
         Optional<SimpleProduct> optionalSimpleProduct
-                = simpleProductRepository.findById(spno);
+                            = simpleProductRepository.findById(spno);
         return optionalSimpleProduct;
     }
 }

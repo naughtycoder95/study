@@ -2,6 +2,7 @@ package org.example.simpledms.model.dto.shop.simpleproduct;
 
 import lombok.*;
 import org.example.simpledms.model.entity.shop.simpleproduct.SimpleOrderDetail;
+
 import java.util.List;
 
 /**

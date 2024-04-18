@@ -44,6 +44,5 @@ public class Dept extends BaseTimeEntity {
     private String  dname; // 부서명
 
     private String  loc;   // 부서위치
-
 }
 
